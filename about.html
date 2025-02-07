@@ -5,26 +5,23 @@ title: About
 
 <style>
   .profile-container {
-      text-align: left;
-      padding-left: 0;
       display: flex;
-      gap: 30px;  /* 이미지와 텍스트 사이 간격 */
+      flex-direction: column;
+      align-items: flex-start;
   }
   .profile-img {
       width: 200px;
       height: 200px;
       border-radius: 50%;
       margin-bottom: 20px;
-      flex-shrink: 0;
   }
   .profile-text {
-    max-width: 800px;
-    margin-left: 230px;  /* 이미지 width(200px) + 원하는 여백(30px) */
+      max-width: 800px;
   }
 </style>
 
 <div class="profile-container">
-  <img src="{{ '/assets/images/my.jpeg' | relative_url }}" alt="Image description" class="profile-img" />
+  <img src="{{ '/assets/images/my.jpeg' | relative_url }}" align="left" alt="Profile Image" class="profile-img" />
   <div class="profile-text">
     <h2>Jaewon Jang</h2>
 
@@ -66,7 +63,5 @@ title: About
       - Implemented reinforcement learning algorithms for robotics simulation<br>
       - Contributed to an open-source deep learning library
     </p>
-
-    
   </div>
 </div>
