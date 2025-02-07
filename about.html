@@ -2,8 +2,19 @@
 layout: about
 title: About
 ---
+
 <!-- 이미지 삽입 -->
-<img src="{{ '/assets/images/my.jpeg' | relative_url }}" alt="Image description" />
+<style>
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+  }
+</style>
+
+<img src="{{ '/assets/images/my.jpeg' | relative_url }}" alt="Image description" class="profile-img" />
 
 <h2>Jaewon Jang</h2>
 
@@ -21,11 +32,23 @@ M.S. : Electrical Engineering, KAIST, 2024.08 ~ <br>
 
 <h3>Interests</h3>
 <p>
-LLM, Reinforcement Learing, Deep Learnging, Data Science
+LLM, Reinforcement Learning, Deep Learning, Data Science
 </p>
 
 <h3>Programming Languages</h3>
 <p>
 Python, C++<br>
-Pytorch 3+, Tenserflow 1+
+Pytorch 3+, TensorFlow 1+
+</p>
+
+<h3>Projects & Experience</h3>
+<p>
+- Developed an NLP model for sentiment analysis<br>
+- Implemented reinforcement learning algorithms for robotics simulation<br>
+- Contributed to an open-source deep learning library
+</p>
+
+<h3>Publications</h3>
+<p>
+- J. Jang, J. Choi, "Optimizing Transformer Models for Low-Latency Inference," IEEE Conference, 2024.
 </p>
