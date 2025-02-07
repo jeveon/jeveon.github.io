@@ -1,81 +1,49 @@
 ---
 layout: post
-title: Test markdown
-subtitle: Each post also has a subtitle
+title: sLLM and Fine-Tuning to Reduce Energy Consumption
+subtitle: Report
 categories: markdown
 tags: [test]
 ---
 
-You can write regular [markdown](https://markdowntutorial.com/) here and Jekyll will automatically convert it to a nice webpage.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](http://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+**1.**    **Introduction: Importance of sLLM**
 
-**Here is some bold text**
+In recent years, AI and ML technologies have advanced rapidly. AI can now handle a wide range of tasks, from simple activities like image generation and voice recognition to complex tasks such as creating long videos, composing new music, and facilitating real-time human communication. Moreover, AI is increasingly integrated into everyday devices like smartphones. However, amidst these advancements, there is a need to address the drawbacks of AI, particularly its significant energy consumption during the training process.
 
-## Here is a secondary heading
+One of the most widely used AI models today is the Large Language Model (LLM), which requires extensive training involving a massive number of parameters. These models, such as OpenAI's GPT-3, are designed to understand and generate human-like text by processing vast amounts of data. However, training such models is extremely resource-intensive. According to a report by Google in July 2019, training a language model with 110 million parameters consumes as much energy as a transcontinental flight. ChatGPT-3, with its 175 billion parameters, requires energy comparable to the output of a large nuclear power plant for one hour. This immense energy consumption is a significant concern, contributing to carbon emissions and high operational costs.
 
-Here's a useless table:
+As the demand for more advanced AI models grows, the energy required for training these models could become a major obstacle. This highlights the need for small Language Models (sLLMs), which aim to maintain high performance while significantly reducing the number of parameters and computational resources required. sLLMs can significantly reduce the energy required for both training and inference processes, making them suitable for deployment in resource-constrained environments like mobile devices and embedded systems. These models retain 70-90% of the performance of their larger counterparts while drastically reducing the number of parameters and computational load.
 
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
+**2.**    **Body: Fine-Tuning techniques**
+
+sLLM achieves efficiency through a variety of advanced fine-tuning techniques. Fine-tuning is an important process that enhances the performance of small language models (sLLM), allowing them to adapt to specific tasks with higher accuracy. For example, fine-tuning general language models into medical or legal texts can improve the performance of specialized fields. This targeted approach allows sLLM to deliver high performance while maintaining energy efficiency and suitability for resource-constrained environments. I will describe four techniques of fine-tuning.
+
+The first is transfer learning, which utilizes the weights of a pre-trained model as a starting point for a new task. By using features trained on a large, common dataset, the model requires less data and time to adapt to new, specific tasks. Transfer learning works by fixing some of the early layers of a pre-trained model that capture general features, and fine-tuning only the later layers that capture task-specific features. This reduces the computational load and speeds up the fusion process.
+
+The second is knowledge distillation, which involves training a smaller, more efficient model (the student) to mimic the behavior of a larger, pre-trained model (the teacher). In the process, the student model learns to reproduce the output distribution of the teacher model, effectively capturing the knowledge encoded in the larger model. This approach is particularly useful for deploying models in resource-constrained environments, as smaller models can achieve similar results to larger models with significantly reduced computational demands.
+
+The third is parameter pruning, which identifies and removes the weights or neurons in the model that contribute the least to the output. It can be done globally or on a layer-by-layer basis, and can be done iteratively as a training or post-training step. Reducing the number of parameters can reduce the size and computational requirements of the model without significantly impacting performance. This technique is useful for deploying models on devices with limited memory and processing power.
+
+The last is quantization. Quantization reduces the precision of the model weights from floating point to a lower bit representation (e.g., 32 bits to 8 bits). This process speeds up inference by reducing the size of the model and allowing more efficient hardware operations to be used. Quantization can be applied during training (quantization-aware training) or as a post-training optimization. This technique is particularly effective for deploying models on mobile devices and embedded systems with limited computing resources.
+
+These techniques significantly improve the performance of sLLM. They are also highly efficient and suitable for a variety of specific tasks with low computing and energy requirements. Thus, the development and fine-tuning of sLLM is critical for creating energy-efficient AI models that can be effectively deployed in various resource-constrained environments.
+
+**3.**    **Conclusion: The Future of AI**
+
+The resources we are given are not infinite. That is why it is of utmost importance to advance AI technology into an energy-efficient model that can sustain our progress within a limited resource. In future research, I believe that priority should be given to enhancing model compression techniques such as pruning and quantization in order to significantly reduce AI model size and computational demand while maintaining a high-performance level. Hardware optimization efforts should focus on designing specialized AI accelerators and energy-efficient processors to minimize the energy footprint of AI applications. Implementing sustainable AI training practices, such as utilizing renewable energy sources and optimizing data center operations, will be critical to reducing environmental impact. I will end this article hoping that expanding sLLM that cover diverse applications in healthcare, finance, and education will bring AI broader social benefits.
 
 
-How about a yummy crepe?
+**Reference**
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+[https://www.hani.co.kr/arti/science/technology/1140136.html](https://www.hani.co.kr/arti/science/technology/1140136.html)
 
-It can also be centered!
+[https://www.h2news.kr/news/articleView.html?idxno=12511](https://www.h2news.kr/news/articleView.html?idxno=12511)
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .center-block :}
+[https://kr.appen.com/blog/fine-tuning/](https://kr.appen.com/blog/fine-tuning/)
 
-Here's a code chunk:
+[https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)](https://en.wikipedia.org/wiki/Fine-tuning_\(deep_learning\))
 
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
+[https://www.gttkorea.com/news/articleView.html?idxno=6853](https://www.gttkorea.com/news/articleView.html?idxno=6853)
 
-And here is the same code with syntax highlighting:
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
-
-And here is the same code yet again but with line numbers:
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
-
-## Boxes
-You can add notification, warning and error boxes like this:
-
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
-
-### Emoji
-
-This single quote code `inet:email:message:to` will not be parsed to emoji icon
-:+1:.
+[https://biz.chosun.com/it-science/ict/2024/05/03/TILI5ZARGVDX5JICKRAHP7H6RA/](https://biz.chosun.com/it-science/ict/2024/05/03/TILI5ZARGVDX5JICKRAHP7H6RA/)
+![Uploading image.png…]()
