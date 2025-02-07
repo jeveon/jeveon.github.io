@@ -5,53 +5,64 @@ title: About
 
 <!-- 이미지 삽입 -->
 <style>
+  .profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
   .profile-img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px auto;
+    margin-right: 20px;
+  }
+
+  .profile-text {
+    max-width: 600px; /* You can adjust the width if needed */
   }
 </style>
 
-<img src="{{ '/assets/images/my.jpeg' | relative_url }}" alt="Image description" class="profile-img" />
+<div class="profile-container">
+  <img src="{{ '/assets/images/my.jpeg' | relative_url }}" alt="Image description" class="profile-img" />
+  <div class="profile-text">
+    <h2>Jaewon Jang</h2>
 
-<h2>Jaewon Jang</h2>
+    <p>
+      🎨 Yet another theme for elegant writers with modern flat style
+      and beautiful night mode.
+    </p>
 
-<p>
-🎨 Yet another theme for elegant writers with modern flat style
-and beautiful night mode.
-</p>
+    <h3>Education</h3>
+    <p>
+      B.S. : Electrical Engineering, KAIST, 2020.03 ~ 2024.08<br>
+      M.S. : Electrical Engineering, KAIST, 2024.08 ~ <br>
+    </p>
+    <ul>
+      <li>Advisor: Junkyun Choi</li>
+    </ul>
 
-<h3>Education</h3>
-<p>
-B.S. : Electrical Engineering, KAIST, 2020.03 ~ 2024.08<br>
-M.S. : Electrical Engineering, KAIST, 2024.08 ~ <br>
-</p>
-<ul>
-  <li>Advisor: Junkyun Choi</li>
-</ul>
+    <h3>Interests</h3>
+    <p>
+      LLM, Reinforcement Learning, Deep Learning, Data Science
+    </p>
 
-<h3>Interests</h3>
-<p>
-LLM, Reinforcement Learning, Deep Learning, Data Science
-</p>
+    <h3>Programming Languages</h3>
+    <p>
+      Python, C++<br>
+      Pytorch 3+, TensorFlow 1+
+    </p>
 
-<h3>Programming Languages</h3>
-<p>
-Python, C++<br>
-Pytorch 3+, TensorFlow 1+
-</p>
+    <h3>Projects & Experience</h3>
+    <p>
+      - Developed an NLP model for sentiment analysis<br>
+      - Implemented reinforcement learning algorithms for robotics simulation<br>
+      - Contributed to an open-source deep learning library
+    </p>
 
-<h3>Projects & Experience</h3>
-<p>
-- Developed an NLP model for sentiment analysis<br>
-- Implemented reinforcement learning algorithms for robotics simulation<br>
-- Contributed to an open-source deep learning library
-</p>
-
-<h3>Publications</h3>
-<p>
-- J. Jang, J. Choi, "Optimizing Transformer Models for Low-Latency Inference," IEEE Conference, 2024.
-</p>
-
+    <h3>Publications</h3>
+    <p>
+      - J. Jang, J. Choi, "Optimizing Transformer Models for Low-Latency Inference," IEEE Conference, 2024.
+    </p>
+  </div>
+</div>
