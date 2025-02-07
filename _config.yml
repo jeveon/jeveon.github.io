@@ -162,7 +162,7 @@ defaults:
   home:
     heading: "Think Fast, Move Faster"
     subheading: "Doing nothing cause nothing to happen"
-    banner: "/assets/images/home.jpg"
+    banner: "/assets/images/banner/home.jpg"
 
 
 # Banner default settings
