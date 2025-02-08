@@ -6,7 +6,7 @@ categories: markdown
 tags: [test]
 ---
 
-**1.**    **Introduction: Importance of sLLM**
+## **1.**    **Introduction: Importance of sLLM**
 
 In recent years, AI and ML technologies have advanced rapidly. AI can now handle a wide range of tasks, from simple activities like image generation and voice recognition to complex tasks such as creating long videos, composing new music, and facilitating real-time human communication. Moreover, AI is increasingly integrated into everyday devices like smartphones. However, amidst these advancements, there is a need to address the drawbacks of AI, particularly its significant energy consumption during the training process.
 
@@ -14,7 +14,7 @@ One of the most widely used AI models today is the Large Language Model (LLM), w
 
 As the demand for more advanced AI models grows, the energy required for training these models could become a major obstacle. This highlights the need for small Language Models (sLLMs), which aim to maintain high performance while significantly reducing the number of parameters and computational resources required. sLLMs can significantly reduce the energy required for both training and inference processes, making them suitable for deployment in resource-constrained environments like mobile devices and embedded systems. These models retain 70-90% of the performance of their larger counterparts while drastically reducing the number of parameters and computational load.
 
-**2.**    **Body: Fine-Tuning techniques**
+## **2.**    **Body: Fine-Tuning techniques**
 
 sLLM achieves efficiency through a variety of advanced fine-tuning techniques. Fine-tuning is an important process that enhances the performance of small language models (sLLM), allowing them to adapt to specific tasks with higher accuracy. For example, fine-tuning general language models into medical or legal texts can improve the performance of specialized fields. This targeted approach allows sLLM to deliver high performance while maintaining energy efficiency and suitability for resource-constrained environments. I will describe four techniques of fine-tuning.
 
@@ -28,12 +28,12 @@ The last is quantization. Quantization reduces the precision of the model weight
 
 These techniques significantly improve the performance of sLLM. They are also highly efficient and suitable for a variety of specific tasks with low computing and energy requirements. Thus, the development and fine-tuning of sLLM is critical for creating energy-efficient AI models that can be effectively deployed in various resource-constrained environments.
 
-**3.**    **Conclusion: The Future of AI**
+## **3.**    **Conclusion: The Future of AI**
 
 The resources we are given are not infinite. That is why it is of utmost importance to advance AI technology into an energy-efficient model that can sustain our progress within a limited resource. In future research, I believe that priority should be given to enhancing model compression techniques such as pruning and quantization in order to significantly reduce AI model size and computational demand while maintaining a high-performance level. Hardware optimization efforts should focus on designing specialized AI accelerators and energy-efficient processors to minimize the energy footprint of AI applications. Implementing sustainable AI training practices, such as utilizing renewable energy sources and optimizing data center operations, will be critical to reducing environmental impact. I will end this article hoping that expanding sLLM that cover diverse applications in healthcare, finance, and education will bring AI broader social benefits.
 
 
-**Reference**
+## **Reference**
 
 [https://www.hani.co.kr/arti/science/technology/1140136.html](https://www.hani.co.kr/arti/science/technology/1140136.html)
 
