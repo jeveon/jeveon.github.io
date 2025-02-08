@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[논문 리뷰] Network Pruning via Transformable Architecture Search"
-categories: Paper
+categories: Paper
 tags: [Network Pruning, TAS, Knowledge Distillation]
 ---
 
