@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learning Efficient Convolutional Networks Through Network Slimming
+title: [논문 리뷰] Learning Efficient Convolutional Networks Through Network Slimming
 categories: Paper
 tags: [Network Pruning, Network Slimming, Channel Pruning]
 ---
