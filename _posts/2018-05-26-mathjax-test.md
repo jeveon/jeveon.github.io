@@ -1,13 +1,67 @@
 ---
 layout: post
-title: Mathjax Test
-subtitle: My first mathjax expression
-categories: markdown
-tags: [test]
+title: Learning Efficient Convolutional Networks Through Network Slimming
+categories: Paper
+tags: [Network Pruning, Network Slimming, Channel Pruning]
 ---
 
-* A safe integer is an integer that
-  * can be exactly represented as an IEEE-754 double precision number, and
-  * whose IEEE-75 representation cannot be the result of rounding any other integer to fit the IEEE-754 representation
-* For example, $ 2 ^ {53} - 1 $ is a safe integer,
-  * it can be exactly represented 
+Liu, Z., Li, J., Shen, Z., Huang, G., Yan, S., & Zhang, C. (2017). Learning efficient convolutional networks through network slimming. In Proceedings of the IEEE international conference on computer vision (pp. 2736-2744). [논문 링크](https://openaccess.thecvf.com/content_iccv_2017/html/Liu_Learning_Efficient_Convolutional_ICCV_2017_paper.html
+)
+
+
+Unlike traditional approaches, there exists a method that prunes entire channels. The paper discussed here addresses the limitations of CNNs in resource-constrained environments such as mobile and IoT devices, where their large size, high memory usage, and computational requirements pose challenges. To resolve these issues, a simple and effective training technique called **Network Slimming** [Liu et al., 2017] has been proposed. This method applies **L1 regularization** to the scaling factors of **Batch Normalization (BN)** layers to identify less important channels and prune them at the channel level. Channel-level sparsity is more efficient, easier to implement, and works effectively on CNN platforms without requiring specific hardware or software packages. Moreover, this method is applicable to both CNNs and fully connected networks, resulting in a lighter and "slimmer" network compared to the original.
+
+Pruning entire channels, including both input and output, is more efficient than setting individual weights to zero. Instead of relying on computationally expensive methods such as **Group Lasso regularization**, this paper uses **scaling factors and sparsity-inducing regularization** to address the problem. A **scaling factor** (γ) is introduced for each channel and multiplied by the channel output, with **L1 regularization** applied to these factors. Channels with small scaling factors are automatically identified and pruned, followed by fine-tuning the network. The **loss function** is defined as follows:
+
+$$
+L = \sum_{(x, y)} l(f(x, W), y) + \lambda \sum_{\gamma \in \Gamma} g(\gamma)
+$$
+
+Here, the first term represents the **standard training loss**, and the second term is the **L1 regularization** of the scaling factors. Removing channels also deletes associated connections, requiring no special sparse computation packages and resulting in a smaller network. The scaling factors automatically identify significant channels, allowing for the safe removal of less important ones without significantly impacting model performance.
+
+### **Batch Normalization and Scaling Factors**
+The paper introduces the use of **Batch Normalization (BN)** scaling factors to implement network slimming effectively. BN layers normalize activations using mini-batch statistics and adjust them with **scaling (γ)** and **shifting (β)** factors, as shown below:
+
+$$
+z = \frac{z_{\text{in}} - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}; \quad z_{\text{out}} = \gamma \hat{z} + \beta
+$$
+
+Here, **μ_B** and **σ_B** are the mean and standard deviation of activations over the mini-batch, while **γ** and **β** are trainable parameters that rescale the normalized activations. The **scaling factors (γ)** serve as a measure of channel importance and can be used in existing networks without adding computational overhead or causing inefficiencies.
+
+### **Channel Pruning and Fine-Tuning Process**
+The channel pruning and fine-tuning process involves three main steps:
+
+1. **Channel Identification and Removal**  
+   Channels with scaling factors close to zero are identified and removed, along with their associated weights and input/output connections.
+
+2. **Pruning Threshold Selection**  
+   Pruning thresholds are set based on the percentile of scaling factors, and channels are selected accordingly for removal.
+
+3. **Fine-Tuning**  
+   Fine-tuning is performed to compensate for any performance degradation caused by pruning. In some cases, this process can even lead to improved accuracy compared to the original model.
+
+Additionally, the **multi-pass training method** repeats the same **training, pruning, and fine-tuning** process multiple times to achieve a more compressed model. This approach provides **higher compression** than a single pass. In architectures like **ResNet** and **DenseNet**, which use **skip connections and pre-activation structures**, BN layers are placed before convolutions, enabling selective use of certain input channels. During testing, **channel selection layers** can be added to exclude less important channels.
+
+### **Advantages of Network Slimming**
+This method can be applied to various networks and easily adapted to modern network architectures. By using **scaling factors**, it reduces **model size, memory usage, and computational load** while maintaining or even improving performance. Adjusting the **pruning ratio** and **sparsity regularization coefficient (λ)** balances model performance and resource savings. A larger **λ** value forces scaling factors closer to zero, removing unnecessary channels and preserving only the essential ones.
+
+---
+
+### **Key Contributions**
+The key contributions of this paper are as follows:
+
+1. **Simple Implementation**  
+   Easily applicable to existing CNN architectures without modifications.
+
+2. **Efficiency Improvement**  
+   L1 regularization of BN scaling factors eliminates unnecessary channels, reducing **model size, memory usage, and computations**.
+
+3. **Maintained or Enhanced Performance**  
+   Regularization improves generalization, and **fine-tuning after pruning compensates for performance loss**.
+
+4. **Multi-Pass Capability**  
+   Repeating the process multiple times results in a more **compressed network**.
+
+5. **Compatibility with Standard Hardware**  
+   No sparse formats are required, enabling easy use with **existing hardware and software**.
+
