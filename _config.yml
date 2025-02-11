@@ -157,6 +157,12 @@ header_pages:
 #   - tags.html
   - about.md
 
+defaults:
+  - scope:
+      path: "about.md"
+    values:
+      permalink: /
+
 # Page default value
 defaults:
   home:
