@@ -168,7 +168,7 @@ defaults:
       banner: "/assets/images/banner/home.jpg"
 
   - scope:
-      path: "about.md"
+      path: "about.html"
       type: "pages"
     values:
       permalink: /        # /about에서 /로 변경하여 메인 페이지로 설정
