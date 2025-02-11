@@ -162,7 +162,7 @@ defaults:
       path: ""
       type: "home"
     values:
-      permalink: /
+      permalink: /home/  # / 에서 /home/으로 변경
       heading: "Think Fast, Move Faster"
       subheading: "Doing nothing causes nothing to happen"
       banner: "/assets/images/banner/home.jpg"
@@ -171,8 +171,7 @@ defaults:
       path: "about.md"
       type: "pages"
     values:
-      permalink: /about
-
+      permalink: /        # /about에서 /로 변경하여 메인 페이지로 설정
 
 
 
