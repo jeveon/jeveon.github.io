@@ -157,22 +157,12 @@ yat:
 #   - tags.html
   # - about.md
 
+# Page default value
 defaults:
-  - scope:
-      path: ""
-      type: "home"
-    values:
-      permalink: /home/  # / 에서 /home/으로 변경
-      heading: "Think Fast, Move Faster"
-      subheading: "Doing nothing causes nothing to happen"
-      banner: "/assets/images/banner/home.jpg"
-
-  - scope:
-      path: "about.html"
-      type: "pages"
-    values:
-      permalink: /        # /about에서 /로 변경하여 메인 페이지로 설정
-
+  home:
+    heading: "Think Fast, Move Faster"
+    subheading: "Doing nothing cause nothing to happen"
+    banner: "/assets/images/banner/home.jpg"
 
 
 # Banner default settings
