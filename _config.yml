@@ -160,17 +160,19 @@ yat:
 defaults:
   - scope:
       path: ""
-      type: "pages"
-    values:
-      permalink: /
-
-  - scope:
-      path: ""
       type: "home"
     values:
+      permalink: /
       heading: "Think Fast, Move Faster"
       subheading: "Doing nothing causes nothing to happen"
       banner: "/assets/images/banner/home.jpg"
+
+  - scope:
+      path: "about.md"
+      type: "pages"
+    values:
+      permalink: /about
+
 
 
 
