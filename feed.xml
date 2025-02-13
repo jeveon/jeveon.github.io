@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://jeveon.github.io//jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeveon.github.io//jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2025-02-13T06:15:24+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/feed.xml</id><title type="html">Jaewon Jang</title><subtitle>Think fast, Move faster</subtitle><author><name>Jeveon</name></author><entry><title type="html">Identifying Unknown Brain Image Using Zero-Shot Learning</title><link href="https://jeveon.github.io//jekyll-theme-yat/report/2024/12/13/zero.html" rel="alternate" type="text/html" title="Identifying Unknown Brain Image Using Zero-Shot Learning" /><published>2024-12-13T00:00:00+00:00</published><updated>2024-12-13T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/report/2024/12/13/zero</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/report/2024/12/13/zero.html"><![CDATA[<p><img src="/assets/images/brain.webp" alt="brain" />
+<a href="https://www.technologynetworks.com/neuroscience/articles/neuroimaging-techniques-and-what-a-brain-image-can-tell-us-363422">Link</a></p>
+
+<h2 id="introduction">Introduction</h2>
+<p>Do People All Have the Same Brain Shape? Most people probably answer ‘no’. Then, do people with schizophrenia have abnormalities in the same part of their brains? This is not an easy question to answer. However, there is a simpler way to think about it, with another example. If a person breaks an arm, will the cross-sectional area of the fracture be the same for everyone? Probably not. Likewise, not only do schizophrenia patients have different brain structures compared to normal brains, but there are also differences in brain structures among schizophrenia patients. This may be because the long-term interaction of genetic risk and environmental factors has altered the pathways of brain structure development for everyone. These findings suggest the need for personalized diagnosis and treatment.</p>
+
+<p>This need can be addressed in part through deep learning. Deep learning models can analyze vast amounts of data to identify important patterns that humans can overlook, enabling fast and accurate disease classification and prediction. As mentioned earlier, this can quickly detect unknown characteristics of schizophrenia and suggest customized treatment options to patients. However, these models require large amounts of labeled data, making it difficult to propose personalized treatments without sufficient prior information. Furthermore, modern social factors such as environmental pollution, increased stress levels, and long-term exposure to electronic devices are also contributing to the rise of new brain diseases. Therefore, there is a growing challenge in modern medicine for systems that can quickly and accurately diagnose previously unknown diseases.</p>
+
+<p>To address this challenge, an AI technique called Zero-Shot Learning (ZSL) has received great attention. ZSL is a technique for developing models that can recognize new objects or perform tasks without explicitly learning about specific categories. ZSL solves new problems by applying knowledge from different tasks to unfamiliar situations. ZSL allows us to analyze medical images to identify and predict patterns of new diseases that have not been explicitly learned. Therefore, in this article, we provide a detailed analysis of ZSL and examine its accuracy in brain image identification. We also want to find out if ZSL can be applied to actual brain disease diagnosis and what the direction of ZSL and brain image will be in the future.</p>
+
+<h2 id="zero-shot-learning">Zero-Shot Learning</h2>
+<p>Zero-shot learning (ZSL) is an innovative approach in deep and machine learning that is designed to allow models to recognize and classify new classes they have never seen during training. For example, in the animal image classification problem, a ZSL model can accurately classify images based on supplementary information, even if they have never seen a class called “Jaguar” in their training data. This demonstrates the model’s ability to leverage prior knowledge and supplementary information to infer about new classes.</p>
+
+<p>The core of ZSL is to leverage supplementary information to establish the relationship between the learned and unseen classes. This supplementary information bridges the gap between the learned and new classes and improves the model’s predictive ability. ZSL utilizes supplementary information primarily in three ways. First, attribute-based mapping defines the main properties of the input data, by which it learns the relationships between classes. For example, in animal classification, properties such as “number of legs” can be used. Second, semantic relations learning learns potential semantic connections between classes, thereby enhancing the model’s understanding of unseen classes. Third, feature generalization enables more accurate prediction for new classes by generalizing common features between classes based on limited training data. In this way, the ZSL model combines existing knowledge with supplementary information to have strong reasoning ability to predict unseen classes.</p>
+
+<p>The learning mechanism of ZSL lies in mapping the input data to the semantic space, and using class attributes, hierarchical information, and other relationships to understand the new data. In this process, the input data is first transformed into a high-dimensional feature vector. Then, deep learning models (e.g., CNN, Transformer) are used to embed the data into the semantic space, and additional information is used to learn the inter-class relationships. The learned model generates a new class of embedding vectors based on additional information about the class that has not been seen. In the test phase, the input data is mapped to the semantic space, and the prediction is made for the new class by returning the most similar class vector.</p>
+
+<p>As such, ZSL provides strong generalization capabilities for data that have not been able to take advantage of the knowledge learned from existing data, which plays an important role in solving new problems in various fields.</p>
+
+<h2 id="research-about-brain-imaging-with-zsl">Research about Brain Imaging with ZSL</h2>
+<p>ZSL has emerged as an innovative approach in brain imaging analysis, with significant advances in both brainwave-based image search and MRI reconstruction. ZSL is highly useful in fields such as brain-computer interface (BCI) and medical imaging, allowing models to make predictions about unseen data or classes without explicit training. Two major studies highlight the strong application potential of ZSL in these fields, demonstrating its potential to overcome traditional challenges and improve model performance.</p>
+
+<h3 id="study-1-eeg-based-image-retrieval">Study 1: EEG-Based Image Retrieval</h3>
+<p>The first study, titled “A Zero-Shot Deep Metric Learning Approach to Brain–Computer Interfaces for Image Retrieval” (Ben McCartney et al. Knowledge-Based Systems 2022) proposes a novel framework for EEG-based image retrieval using zero-shot learning. This research shows how ZSL can be used to map EEG data and image features into a shared feature space, allowing for the retrieval of images that were not part of the training set. Specifically, the framework maps EEG signals generated during image observation to visual features, effectively enabling the identification and retrieval of images that were never directly seen or used during training.</p>
+
+<h3 id="study-2-mri-reconstruction-with-slater">Study 2: MRI Reconstruction with SLATER</h3>
+<p>The second study, titled “Unsupervised MRI Reconstruction via Zero-Shot Learned Adversarial Transformers” (Yilmaz Korkmaz et al. IEEE 2022) presents an unsupervised MRI reconstruction method using zero-shot learned adversarial transformers (SLATER). Traditional MRI reconstruction methods rely heavily on supervised neural networks, which require large, paired training datasets. SLATER minimizes the need for complex computational resources while still accurately capturing important spatial features in MRI data. This study demonstrates that SLATER can effectively improve generalization performance and inference efficiency, even when applied to new MRI data that it has not previously encountered.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Zero-shot learning (ZSL) has shown significant potential in brain imaging, especially EEG-based image retrieval and MRI reconstruction. Both studies show how ZSL allows models to be generalized to unseen data, thus eliminating the need for large, paired datasets. These applications highlight the ability of ZSL to reduce its dependence on labeled data by providing adaptive, efficient, and scalable solutions in medical imaging and personalized diagnosis.</p>
+
+<p>Therefore, in the future, the integration of ZSL with various imaging modalities and improved semantic embedding techniques will further improve the model adaptability. As computational resources improve, real-time ZSL applications will become more practical in brain-computer interfaces and clinical diagnostics, enabling more personalized diagnoses.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>https://pubmed.ncbi.nlm.nih.gov/30969333/</li>
+  <li>http://www.mind-journal.com/news/articleView.html?idxno=396</li>
+  <li>https://www.sciencedirect.com/science/article/pii/S0950705122002477</li>
+  <li>https://ieeexplore.ieee.org/abstract/document/9695412</li>
+  <li>https://13akstjq.github.io/TIL/post/2024-07-12-Zero-ShotLearningBridgingtheGapBetweenKnownandUnknown</li>
+  <li>https://www.cwn.kr/news/articleView.html?idxno=2195</li>
+  <li>https://en.wikipedia.org/wiki/Neuroimaging</li>
+</ul>]]></content><author><name>Jeveon</name></author><category term="Report" /><category term="Zero-Shot" /><category term="Brain" /><summary type="html"><![CDATA[Link]]></summary></entry><entry><title type="html">[논문 리뷰] Revisiting Random Channel Pruning for Neural Network Compression</title><link href="https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/10/Random.html" rel="alternate" type="text/html" title="[논문 리뷰] Revisiting Random Channel Pruning for Neural Network Compression" /><published>2024-12-10T00:00:00+00:00</published><updated>2024-12-10T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/10/Random</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/10/Random.html"><![CDATA[<p>Li, Y., Adamczewski, K., Li, W., Gu, S., Timofte, R., &amp; Van Gool, L. (2022). Revisiting random channel pruning for neural network compression. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 191-201). <a href="https://openaccess.thecvf.com/content/CVPR2022/html/Li_Revisiting_Random_Channel_Pruning_for_Neural_Network_Compression_CVPR_2022_paper.html">논문 링크</a></p>
+
+<p><img src="/assets/images/Random.PNG" alt="random" /></p>
+
+<h3 id="random-channel-pruning">Random Channel Pruning</h3>
+
+<p>Among the many studies on network pruning, this paper focuses on establishing a fair benchmark for evaluating pruning methods. It specifically addresses methods for accelerating channel pruning. Despite the variety of existing channel pruning algorithms, the paper highlights a lack of fair and direct comparisons between these methods. Emphasizing the critical role of channel configuration alongside learned weights, the paper introduces a novel perspective: pruning algorithms should focus on finding the optimal channel configuration. To this end, <strong>Random Channel Pruning</strong> is proposed as a strong baseline method [Li et al., 2022]. In this approach, the number of channels to prune at each layer is chosen randomly, and those channels are removed. Through extensive experiments, this simple yet effective method demonstrates competitive performance compared to advanced pruning techniques.</p>
+
+<p>The study’s key findings can be summarized as follows:</p>
+
+<ul>
+  <li>Recent advanced channel pruning algorithms showed no significant performance improvements over simpler L1 or L2 norm-based pruning criteria, highlighting that simplicity often suffices and that these norms remain reliable baselines.</li>
+  <li>Random pruning, which does not depend on pretrained models, achieved similar or even superior performance compared to traditional methods like L1/L2 norm or gradient-based approaches. This challenges the conventional reliance on pretrained networks and demonstrates the versatility of random pruning.</li>
+  <li>Random pruning achieved performance within <strong>0.5%</strong> of more sophisticated techniques such as network architecture optimization and width expansion. This indicates that pruning alone has inherent limitations tied to the upper-bound performance of the original network.</li>
+  <li>The performance of pruned networks was found to depend heavily on the number of fine-tuning epochs, with longer fine-tuning significantly enhancing their performance. This underscores the importance of post-pruning optimization.</li>
+</ul>
+
+<p>This paper categorizes random pruning into three types:</p>
+
+<ol>
+  <li><strong>Full Random</strong>: Channels are pruned without constraints at each layer.</li>
+  <li><strong>Constrained Random</strong>: Channels are randomly selected within the layer but follow predefined pruning ratios.</li>
+  <li><strong>Random Channel Count Selection</strong>: Pruning ratios for each layer are sampled randomly, and channels are pruned accordingly.</li>
+</ol>
+
+<p>These approaches enable efficient sampling within the channel configuration space, facilitating the exploration of diverse combinations. Moreover, random pruning is versatile enough to be applied to both pretrained networks and networks trained from scratch. For the latter, sub-networks can be trained and evaluated in parallel during each mini-batch, enabling efficient performance evaluation.</p>
+
+<p>Random channel pruning offers a simple yet effective benchmark for comparing channel pruning algorithms. It critiques the complexity of existing methods, highlighting the need for global network optimization advancements. Using a basic sampling strategy, random pruning achieves strong results and encourages more efficient sampling techniques.</p>
+
+<hr />
+
+<h3 id="key-contributions"><strong>Key Contributions</strong></h3>
+
+<p>The significant contributions of this paper are as follows:</p>
+
+<ol>
+  <li>
+    <p><strong>Introduction of Random Channel Pruning</strong><br />
+The paper introduces Random Channel Pruning as a robust baseline for channel pruning. This method demonstrates competitive performance with advanced techniques while maintaining simplicity, emphasizing the critical role of efficient channel configuration.</p>
+  </li>
+  <li>
+    <p><strong>Establishment of a Fair Benchmark</strong><br />
+By highlighting the lack of fair benchmarks for comparing pruning algorithms, the study provides a straightforward yet effective evaluation framework. It demonstrates that even simple criteria like L1/L2 norm-based pruning can rival more complex methods.</p>
+  </li>
+  <li>
+    <p><strong>Challenging Pretraining Dependency</strong><br />
+The paper shows that random pruning can achieve similar or superior performance without relying on pretrained models, challenging the conventional dependence on pretrained networks in pruning.</p>
+  </li>
+  <li>
+    <p><strong>Exploration of Channel Configuration Space</strong><br />
+Through random sampling strategies, the method effectively explores diverse channel configurations, revealing the potential of simpler approaches in achieving efficient pruning.</p>
+  </li>
+  <li>
+    <p><strong>Insights into Fine-tuning Importance</strong><br />
+The study underscores the critical role of fine-tuning epochs in optimizing pruned networks, offering practical guidance for improving post-pruning performance.</p>
+  </li>
+</ol>]]></content><author><name>Jeveon</name></author><category term="Paper" /><category term="Network Pruning" /><category term="Random Channel Pruning" /><summary type="html"><![CDATA[Li, Y., Adamczewski, K., Li, W., Gu, S., Timofte, R., &amp; Van Gool, L. (2022). Revisiting random channel pruning for neural network compression. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 191-201). 논문 링크]]></summary></entry><entry><title type="html">[논문 리뷰] Network Pruning via Transformable Architecture Search</title><link href="https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/09/TAS.html" rel="alternate" type="text/html" title="[논문 리뷰] Network Pruning via Transformable Architecture Search" /><published>2024-12-09T00:00:00+00:00</published><updated>2024-12-09T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/09/TAS</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/09/TAS.html"><![CDATA[<p>Dong, X., &amp; Yang, Y. (2019). Network pruning via transformable architecture search. Advances in Neural Information Processing Systems, 32. <a href="https://proceedings.neurips.cc/paper/2019/hash/a01a0380ca3c61428c26a231f0e49a09-Abstract.html">논문 링크</a></p>
+
+<p><img src="/assets/images/TAS.PNG" alt="TAS" /></p>
+
+<h3 id="transformable-architecture-search">Transformable Architecture Search</h3>
+
+<p>In traditional network pruning, the width and depth of the pruned networks are predefined, which often results in rigid architectures. In contrast, the proposed <strong>Transformable Architecture Search (TAS)</strong> method introduces flexibility by directly searching for networks with adjustable channel and layer sizes [Dong et al., 2019]. TAS works by minimizing the loss of pruned networks by combining feature maps of different sizes while simultaneously learning the optimal number of channels and layers. This approach uses a method called <strong>Channel-Wise Interpolation (CWI)</strong> to align feature maps and optimizes both the network weights and architecture parameters through backpropagation.</p>
+
+<p>TAS addresses challenges in deploying deep convolutional neural networks (CNNs) on resource-constrained devices like mobile phones or drones. It incorporates <strong>Neural Architecture Search (NAS)</strong> to find the best configuration of channels and layers and employs <strong>Knowledge Distillation (KD)</strong> to transfer knowledge from larger networks to smaller, more efficient ones.</p>
+
+<h3 id="tas-methodology"><strong>TAS Methodology</strong></h3>
+<p>The TAS method works as follows:</p>
+
+<ol>
+  <li>
+    <p><strong>Channel Pruning</strong><br />
+This step reduces the number of output channels per layer, which decreases the computational cost. By reducing the number of channels in a layer, the amount of computation required for subsequent layers is also minimized.</p>
+  </li>
+  <li>
+    <p><strong>Width Search</strong><br />
+The method learns the distribution of possible channel sizes for each layer, allowing it to select optimal sizes for the network’s layers. This is achieved through a differentiable selection process, making it suitable for gradient-based optimization.</p>
+  </li>
+  <li>
+    <p><strong>Feature Map Alignment and Aggregation</strong><br />
+To handle feature maps from different network sizes, <strong>CWI</strong> is used to align them. This technique ensures that feature maps from different layers can be combined effectively without significant computational overhead.</p>
+  </li>
+  <li>
+    <p><strong>Depth Search</strong><br />
+TAS learns the optimal number of layers by sampling probabilities for each layer in the network. The output is then calculated as a weighted combination of aligned feature maps from different layers.</p>
+  </li>
+  <li>
+    <p><strong>Optimization Objectives</strong><br />
+The main goal of TAS is to minimize the validation loss of the pruned networks while keeping the computational cost within acceptable limits. A cost loss is included to ensure that the network remains efficient.</p>
+  </li>
+</ol>
+
+<p>To further optimize the pruned network, <strong>Knowledge Distillation (KD)</strong> is used to transfer knowledge from the original, larger network. KD reduces the difference between the outputs of the smaller network and the softened predictions from the larger network. This process enhances the performance of the smaller network, making it more competitive with the original, larger model.</p>
+
+<hr />
+
+<h3 id="key-contributions"><strong>Key Contributions</strong></h3>
+<p>The key contributions of this paper are as follows:</p>
+
+<ol>
+  <li>
+    <p><strong>Transformable Architecture Search (TAS)</strong><br />
+Unlike traditional NAS methods, which focus on the topology of the network, TAS optimizes the depth and width of the network. This results in more compact and efficient architectures that meet computational constraints.</p>
+  </li>
+  <li>
+    <p><strong>Knowledge Distillation (KD)</strong><br />
+The paper demonstrates how KD can be effectively used to optimize networks that are smaller and less complex.</p>
+  </li>
+</ol>]]></content><author><name>Jeveon</name></author><category term="Paper" /><category term="Network Pruning" /><category term="TAS" /><category term="Knowledge Distillation" /><summary type="html"><![CDATA[Dong, X., &amp; Yang, Y. (2019). Network pruning via transformable architecture search. Advances in Neural Information Processing Systems, 32. 논문 링크]]></summary></entry><entry><title type="html">[논문 리뷰] Learning Efficient Convolutional Networks Through Network Slimming</title><link href="https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/06/slimming.html" rel="alternate" type="text/html" title="[논문 리뷰] Learning Efficient Convolutional Networks Through Network Slimming" /><published>2024-12-06T00:00:00+00:00</published><updated>2024-12-06T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/06/slimming</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/06/slimming.html"><![CDATA[<p>Liu, Z., Li, J., Shen, Z., Huang, G., Yan, S., &amp; Zhang, C. (2017). Learning efficient convolutional networks through network slimming. In Proceedings of the IEEE international conference on computer vision (pp. 2736-2744). <a href="https://openaccess.thecvf.com/content_iccv_2017/html/Liu_Learning_Efficient_Convolutional_ICCV_2017_paper.html">논문 링크</a></p>
+
+<p><a href="/assets/images/channel_pruning.PNG">Channel Pruning</a></p>
+
+<h3 id="channel-pruning">Channel Pruning</h3>
+
+<p>Unlike traditional approaches, there exists a method that prunes entire channels. The paper discussed here addresses the limitations of CNNs in resource-constrained environments such as mobile and IoT devices, where their large size, high memory usage, and computational requirements pose challenges. To resolve these issues, a simple and effective training technique called <strong>Network Slimming</strong> [Liu et al., 2017] has been proposed. This method applies <strong>L1 regularization</strong> to the scaling factors of <strong>Batch Normalization (BN)</strong> layers to identify less important channels and prune them at the channel level. Channel-level sparsity is more efficient, easier to implement, and works effectively on CNN platforms without requiring specific hardware or software packages. Moreover, this method is applicable to both CNNs and fully connected networks, resulting in a lighter and “slimmer” network compared to the original.</p>
+
+<p>Pruning entire channels, including both input and output, is more efficient than setting individual weights to zero. Instead of relying on computationally expensive methods such as <strong>Group Lasso regularization</strong>, this paper uses <strong>scaling factors and sparsity-inducing regularization</strong> to address the problem. A <strong>scaling factor</strong> (γ) is introduced for each channel and multiplied by the channel output, with <strong>L1 regularization</strong> applied to these factors. Channels with small scaling factors are automatically identified and pruned, followed by fine-tuning the network. The <strong>loss function</strong> is defined as follows:</p>
+
+<p>$$
+L = \sum_{(x, y)} l(f(x, W), y) + \lambda \sum_{\gamma \in \Gamma} g(\gamma)
+$$</p>
+
+<p>Here, the first term represents the <strong>standard training loss</strong>, and the second term is the <strong>L1 regularization</strong> of the scaling factors. Removing channels also deletes associated connections, requiring no special sparse computation packages and resulting in a smaller network. The scaling factors automatically identify significant channels, allowing for the safe removal of less important ones without significantly impacting model performance.</p>
+
+<h3 id="batch-normalization-and-scaling-factors"><strong>Batch Normalization and Scaling Factors</strong></h3>
+<p>The paper introduces the use of <strong>Batch Normalization (BN)</strong> scaling factors to implement network slimming effectively. BN layers normalize activations using mini-batch statistics and adjust them with <strong>scaling (γ)</strong> and <strong>shifting (β)</strong> factors, as shown below:</p>
+
+<p>$$
+z = \frac{z_{\text{in}} - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}; \quad z_{\text{out}} = \gamma \hat{z} + \beta
+$$</p>
+
+<p>Here, <strong>μ_B</strong> and <strong>σ_B</strong> are the mean and standard deviation of activations over the mini-batch, while <strong>γ</strong> and <strong>β</strong> are trainable parameters that rescale the normalized activations. The <strong>scaling factors (γ)</strong> serve as a measure of channel importance and can be used in existing networks without adding computational overhead or causing inefficiencies.</p>
+
+<h3 id="channel-pruning-and-fine-tuning-process"><strong>Channel Pruning and Fine-Tuning Process</strong></h3>
+<p>The channel pruning and fine-tuning process involves three main steps:</p>
+
+<ol>
+  <li>
+    <p><strong>Channel Identification and Removal</strong><br />
+Channels with scaling factors close to zero are identified and removed, along with their associated weights and input/output connections.</p>
+  </li>
+  <li>
+    <p><strong>Pruning Threshold Selection</strong><br />
+Pruning thresholds are set based on the percentile of scaling factors, and channels are selected accordingly for removal.</p>
+  </li>
+  <li>
+    <p><strong>Fine-Tuning</strong><br />
+Fine-tuning is performed to compensate for any performance degradation caused by pruning. In some cases, this process can even lead to improved accuracy compared to the original model.</p>
+  </li>
+</ol>
+
+<p>Additionally, the <strong>multi-pass training method</strong> repeats the same <strong>training, pruning, and fine-tuning</strong> process multiple times to achieve a more compressed model. This approach provides <strong>higher compression</strong> than a single pass. In architectures like <strong>ResNet</strong> and <strong>DenseNet</strong>, which use <strong>skip connections and pre-activation structures</strong>, BN layers are placed before convolutions, enabling selective use of certain input channels. During testing, <strong>channel selection layers</strong> can be added to exclude less important channels.</p>
+
+<h3 id="advantages-of-network-slimming"><strong>Advantages of Network Slimming</strong></h3>
+<p>This method can be applied to various networks and easily adapted to modern network architectures. By using <strong>scaling factors</strong>, it reduces <strong>model size, memory usage, and computational load</strong> while maintaining or even improving performance. Adjusting the <strong>pruning ratio</strong> and <strong>sparsity regularization coefficient (λ)</strong> balances model performance and resource savings. A larger <strong>λ</strong> value forces scaling factors closer to zero, removing unnecessary channels and preserving only the essential ones.</p>
+
+<hr />
+
+<h3 id="key-contributions"><strong>Key Contributions</strong></h3>
+<p>The key contributions of this paper are as follows:</p>
+
+<ol>
+  <li>
+    <p><strong>Simple Implementation</strong><br />
+Easily applicable to existing CNN architectures without modifications.</p>
+  </li>
+  <li>
+    <p><strong>Efficiency Improvement</strong><br />
+L1 regularization of BN scaling factors eliminates unnecessary channels, reducing <strong>model size, memory usage, and computations</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Maintained or Enhanced Performance</strong><br />
+Regularization improves generalization, and <strong>fine-tuning after pruning compensates for performance loss</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Multi-Pass Capability</strong><br />
+Repeating the process multiple times results in a more <strong>compressed network</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Compatibility with Standard Hardware</strong><br />
+No sparse formats are required, enabling easy use with <strong>existing hardware and software</strong>.</p>
+  </li>
+</ol>]]></content><author><name>Jeveon</name></author><category term="Paper" /><category term="Network Pruning" /><category term="Network Slimming" /><category term="Channel Pruning" /><summary type="html"><![CDATA[Liu, Z., Li, J., Shen, Z., Huang, G., Yan, S., &amp; Zhang, C. (2017). Learning efficient convolutional networks through network slimming. In Proceedings of the IEEE international conference on computer vision (pp. 2736-2744). 논문 링크]]></summary></entry><entry><title type="html">[논문 리뷰] Global vision transformer pruning with hessian-aware saliency</title><link href="https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/05/ViTs.html" rel="alternate" type="text/html" title="[논문 리뷰] Global vision transformer pruning with hessian-aware saliency" /><published>2024-12-05T00:00:00+00:00</published><updated>2024-12-05T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/05/ViTs</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/paper/2024/12/05/ViTs.html"><![CDATA[<p>Yang, H., Yin, H., Shen, M., Molchanov, P., Li, H., &amp; Kautz, J. (2023). Global vision transformer pruning with hessian-aware saliency. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 18547-18557).
+<a href="https://openaccess.thecvf.com/content/CVPR2023/html/Yang_Global_Vision_Transformer_Pruning_With_Hessian-Aware_Saliency_CVPR_2023_paper.html">논문 링크</a></p>
+
+<p><img src="https://production-media.paperswithcode.com/methods/Screen_Shot_2021-01-26_at_9.43.31_PM_uI4jjMq.png" alt="ViT" /></p>
+
+<h2 id="pruning-vision-transformers-vits">Pruning Vision Transformers (ViTs)</h2>
+
+<p>I survey a study that applies <strong>network pruning</strong> to <strong>Vision Transformers (ViTs)</strong>, one of the most widely used models today, and proposes a new model. This paper introduces a <strong>structural pruning approach</strong> for ViTs to <strong>reduce computational cost and model size</strong> while maintaining performance [Yang et al., 2023]. Unlike conventional ViT models that rely on <strong>uniform design dimensions</strong>, this research proposes <strong>redistributing parameters globally</strong> through <strong>structural pruning</strong> to optimize efficiency.</p>
+
+<h3 id="structural-pruning-of-vits"><strong>Structural Pruning of ViTs</strong></h3>
+<p>The proposed method reallocates and prunes independent <strong>structural components</strong> of the ViT architecture, including:</p>
+
+<ul>
+  <li><strong>Embedding dimensions (EMB)</strong></li>
+  <li><strong>Number of heads in multi-head self-attention (MSA) layers ($H$)</strong></li>
+  <li><strong>Output dimensions of $Q$ and $K$ projections ($QK$)</strong></li>
+  <li><strong>Input and projection dimensions of $V$ for each head</strong></li>
+  <li><strong>Hidden dimensions of MLPs</strong></li>
+</ul>
+
+<p>This approach integrates <strong>head alignment</strong> to ensure consistent dimensions across <strong>$QK$ and $V$</strong> in all heads, optimizing the overall <strong>MSA latency</strong>. By <strong>reconstructing the weights</strong> of <strong>$Q$, $K$, $V$, and PROJ</strong> projection layers, the method effectively achieves <strong>head-specific pruning</strong> while addressing dimensional mismatches. <strong>Experimental results</strong> demonstrate <strong>up to a 0.3% improvement in accuracy</strong> under the same latency constraints, highlighting the efficiency of the proposed pruning strategy.</p>
+
+<h3 id="hessian-based-importance-ranking"><strong>Hessian-Based Importance Ranking</strong></h3>
+<p>To evaluate the importance of parameter groups for pruning, the study employs a <strong>Hessian-based group importance ranking</strong>. Inspired by recent research on the <strong>loss surface geometry</strong> of deep neural networks, the <strong>Hessian matrix</strong> of the loss function with respect to the <strong>structural parameter groups</strong> is utilized. The <strong>importance score</strong> $I_S$ is derived from the <strong>squared sum of Hessian eigenvalues</strong>:</p>
+
+<p>$$
+I_S := \mathbb{E}<em>z \bigg| \frac{\nabla</em>{g_S} L(g_S + h z)</p>
+<ul>
+  <li>\nabla_{g_S} L(g_S)}{h} \bigg|^2, \quad z \sim \mathcal{N}(0, 1).
+$$</li>
+</ul>
+
+<p>where <strong>$h$</strong> is a small positive constant, <strong>$g_S$</strong> represents the gate variables for the <strong>structural group</strong> $S$, and <strong>$L$</strong> denotes the loss function. This criterion <strong>quantifies the sensitivity</strong> of the loss to <strong>perturbations in $S$</strong> and ensures <strong>minimal loss degradation</strong> during pruning.</p>
+
+<p>The importance score <strong>$I_S$</strong> is computed using <strong>Hessian-vector multiplication</strong>, approximated by <strong>finite differences</strong>, to <strong>identify and remove the least important structural groups</strong>, ensuring efficient pruning. This approach, similar to <strong>Taylor-based pruning</strong> in CNNs, focuses on <strong>pruning structural components</strong> of ViTs rather than <strong>individual weights</strong>. The study also highlights the <strong>limitations of magnitude-based pruning methods</strong>, which lack a <strong>global pruning criterion</strong> and often lead to <strong>overly aggressive or insufficient pruning</strong> of ViT components.</p>
+
+<h3 id="latency-aware-pruning"><strong>Latency-Aware Pruning</strong></h3>
+<p>Pruning is further tailored to <strong>reduce latency</strong> by introducing <strong>latency-aware regularization</strong> into the importance score:</p>
+
+<p>$$
+I^L_S(W) = I_S(W) - \eta \cdot \left( \text{Lat}(W) - \text{Lat}(W \setminus S) \right),
+$$</p>
+
+<p>where <strong>$\text{Lat}(\cdot)$</strong> represents the <strong>latency of the model</strong>, and <strong>$\eta$</strong> is a <strong>regularization coefficient</strong>. By <strong>penalizing importance scores</strong> based on their <strong>latency impact</strong>, this approach accelerates the achievement of <strong>latency targets</strong> with <strong>minimal accuracy loss</strong>. <strong>Lookup tables</strong> are used to <strong>estimate latency</strong> for different <strong>structural configurations</strong> efficiently.</p>
+
+<h3 id="training-objective-with-distillation"><strong>Training Objective with Distillation</strong></h3>
+<p>The training objective combines <strong>pruning for importance ranking</strong> with <strong>fine-tuning for weight updates</strong>. The <strong>loss function</strong> incorporates both <strong>hard distillation from a CNN teacher</strong> and <strong>full-model distillation from the original pretrained model</strong>:</p>
+
+<p>$$
+L = \alpha \cdot L_{\text{full}} + L_{\text{CNN}}
+$$</p>
+
+<p>where <strong>$L_{\text{CNN}}$</strong> is defined as:</p>
+
+<p>$$
+L_{\text{CNN}} = L_{\text{CE}}(\Psi(z_c^s), Y) + L_{\text{CE}}(\Psi(z_d^s), Y_{\text{CNN}})
+$$
+and <strong>$L_{\text{full}}$</strong> is given by:</p>
+
+<p>$$
+L_{\text{full}} = L_{\text{KL}}(\Psi(z_c^s / \tau), \Psi(z_c^t / \tau)) + L_{\text{KL}}(\Psi(z_d^s / \tau), \Psi(z_d^t / \tau))
+$$</p>
+
+<p>Here:</p>
+<ul>
+  <li><strong>$\Psi(\cdot)$</strong> denotes the <strong>softmax function</strong>.</li>
+  <li><strong>$L_{\text{CE}}$</strong> and <strong>$L_{\text{KL}}$</strong> are the <strong>cross-entropy</strong> and <strong>KL divergence losses</strong>, respectively.</li>
+  <li><strong>$z_c$</strong> and <strong>$z_d$</strong> represent <strong>logits from class and distillation tokens</strong>.</li>
+  <li><strong>$\tau$</strong> is the <strong>distillation temperature</strong>.</li>
+</ul>
+
+<p>Combining these terms ensures that the <strong>pruned model aligns closely</strong> with both the <strong>pretrained model</strong> and the <strong>teacher model</strong>.</p>
+
+<hr />
+
+<h3 id="key-contributions"><strong>Key Contributions</strong></h3>
+<p>The key contributions of this study are summarized as follows:</p>
+
+<ol>
+  <li>
+    <p><strong>Hessian-Based Importance Ranking</strong><br />
+A novel <strong>Hessian-based importance ranking method</strong> is proposed, providing a <strong>robust pruning metric</strong> that outperforms <strong>magnitude-based criteria</strong> for ViTs.</p>
+  </li>
+  <li>
+    <p><strong>Latency-Aware Regularization</strong><br />
+A <strong>latency-aware regularization</strong> term is introduced to <strong>guide pruning</strong> toward achieving <strong>latency constraints</strong> with <strong>higher accuracy</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Compatibility with Ampere GPU Sparsity</strong><br />
+The proposed <strong>structured pruning</strong> ensures <strong>compatibility</strong> with <strong>Ampere GPU sparsity</strong>, enabling <strong>efficient hardware acceleration</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Comprehensive Distillation Training</strong><br />
+A <strong>training objective</strong> combining <strong>CNN hard distillation</strong> and <strong>full-model distillation</strong> is designed to <strong>fine-tune pruned models effectively</strong>.</p>
+  </li>
+</ol>]]></content><author><name>Jeveon</name></author><category term="Paper" /><category term="ViTs" /><category term="Network pruning" /><summary type="html"><![CDATA[Yang, H., Yin, H., Shen, M., Molchanov, P., Li, H., &amp; Kautz, J. (2023). Global vision transformer pruning with hessian-aware saliency. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 18547-18557). 논문 링크]]></summary></entry><entry><title type="html">Combat models applied in the Paraguayan War</title><link href="https://jeveon.github.io//jekyll-theme-yat/project/2024/11/28/combet.html" rel="alternate" type="text/html" title="Combat models applied in the Paraguayan War" /><published>2024-11-28T00:00:00+00:00</published><updated>2024-11-28T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/project/2024/11/28/combet</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/project/2024/11/28/combet.html"><![CDATA[<h2 id="1-intro">1. Intro</h2>
+
+<p><a href="https://pubsonline.informs.org/doi/abs/10.1287/opre.14.5.759">Combat models and historical data; The U.S. Civil War</a> 를 새로운 데이터로 분석한 프로젝트입니다.</p>
+
+<p>남북 전쟁과 비슷한 시기에 일어난 전쟁들을 추가적으로 분석하였습니다. 남북 전쟁과 비슷한 시기에 일어난 전쟁들은 비슷한 전투의 양상을 가지며, 모델의 적용 또한 잘 이루어질 것으로 예상했기 때문에 이를 적용하였습니다.</p>
+
+<p><img src="/assets/images/combet_model/그림1.png" alt="War" /></p>
+
+<p>제가 소개해드릴 전쟁은 <strong>파라과이 전쟁</strong>입니다. 이 전쟁은 <strong>남미 역사상 가장 참혹한 전쟁</strong>으로 알려져 있으며, <strong>브라질</strong>, <strong>아르헨티나</strong>, <strong>우루과이</strong>로 이루어진 삼국 동맹과 <strong>파라과이</strong> 사이에서 벌어진 대규모 충돌이었습니다.</p>
+
+<p>파라과이 전쟁의 원인은 세가지 정도로 줄일 수 있습니다. 가장 먼저는 지정학적 갈등입니다. 라플라타강 유역의 통제권을 둘러싼 경쟁이 주요 원인이었습니다. 이 지역은 내륙국인 파라과이의 유일한 해상 통로로, 경제적으로 매우 중요했습니다. 파라과이는 이를 통해서 대서양으로 나가길 원했지만 주변국과 갈등이 있었습니다. 두 번째로 파라과이의 대통령은 파라과이를 지역 강국으로 만들고자 했습니다. 그는 군사력을 증강하고 인접국들과의 갈등을 불사했습니다. 따라서 강의 통제권을 얻기 위해서 군사력 현대화와 군수 산업 발전을 추진했습니다. 또한 철강, 무기, 화약 생산을 확대하고, 조선소에서 군함 제작을 진행했습니다. 이러한 상황에서 마지막으로 브라질과 아르헨티나가 우루과이 내전에 개입하면서 지역의 균형이 붕괴되었고 브라질이 우루과이를 침공하자 이를 틈타 파라과이가 브라질로 침공하게 되면서 전쟁이 시작되었습니다.</p>
+
+<p>아르헨티나는 중립을 유지하려 했으나, 파라과이 군이 아르헨티나를 침입하자 아르헨티나는 파라과이에 전쟁을 선포했습니다. 이후 브라질, 아르헨티나, 우루과이가 동맹을 맺고 파라과이에 대항했고 이 전쟁은 1870년까지 지속되게 됩니다.</p>
+
+<p>이러한 전쟁의 결과는 남북전쟁과 달리 참혹했습니다.</p>
+
+<p>파라과이는 전쟁 후 인구의 60-70%를 잃었으며, 특히 성인 남성의 90%가 사망했습니다. 또한 파라과이는 약 154,000 km²의 영토를 상실했습니다. 브라질과 아르헨티나가 이 영토를 분할했고 이로 인해서 파라과이의 경제는 붕괴되었습니다.</p>
+
+<p>브라질은 전쟁 비용으로 인해 막대한 재정 적자 발생했고, 노예 제도가 약화 되고 군사적 조직화가 이루어졌습니다. 우루과이는 내전이 종식되었고, 상대적으로 안정된 정치 체제가 구축되었지만 전쟁 후 브라질과 아르헨티나의 정치적, 경제적 영향력에 의존하는 구조가 만들어졌습니다.</p>
+
+<p>마지막으로 아르헨티나는 상대적으로 적은 비용과 피해로 인해 경제적 영향은 크지 않았으며, 파라과이의 경제적 약화를 틈타 무역 관계에서 우위를 점했습니다. 또한 전쟁 참여는 국가 통합을 강화하는 데 기여하는 결과를 냈습니다.</p>
+
+<p>비슷한 시기에 일어난 전쟁을 가져왔다고 하더라도 전쟁의 흐름이 동일하지 않고 다 다르기 때문에 남북전쟁과 파라과이 전쟁의 차이점이 존재합니다. 따라서 이를 말씀드리며, 남북전쟁과 완전히 똑같은 형태를 가진 전쟁으로 모델을 분석하지 않았음을 말씀드리고 싶습니다.</p>
+
+<p>미국 남북 전쟁과 파라과이 전쟁은 여러가지 차이가 존재하지만 제가 주요하게 얘기드릴 부분은 군사력, 무기와 산업, 전략과 관련된 부분입니다.</p>
+
+<p>군사력에서는 조금 큰 차이가 있습니다. 남북전쟁에서 북부는 약 260만 명 이상을 군대로 모집했고, 남부는 75만~120만 명의 병력을 동원했습니다. 반면, 파라과이 전쟁에서는 파라과이는 약 10만명의 병력과 삼국 동맹의 30만 명 이상의 병력을 동원했습니다. 이를 통해 두 전쟁의 전력이 극심하게 차이난다는 것을 알 수 있습니다.</p>
+
+<p>또한 남북전쟁에서 북부는 산업화된 경제를 바탕으로 20,000마일에 달하는 철도를 활용해 신형 무기와 물자를 안정적으로 공급했습니다. 남부 또한 상대적으로 열악한 산업 기반이지만 철도로 지원을 계속해서 받을 수 있었습니다. 반면 파라과이는 전쟁 준비가 잘 되어 있었다고 평가되지만, 미국에 비해 무기와 장비는 품질이 낮았습니다. 대부분의 병사가 사정거리가 짧고 재장전 속도가 느린 머스켓으로 무장했고, 포병과 해군 또한 제한적인 전력을 가지고 있었습니다.</p>
+
+<p>전략적인 부분에서도 조금 차이를 보였습니다. 남북전쟁에서 남부는 자국 영토를 방어하는 데 주력했고, 북부는 압도적인 물량을 통해 점차 전세를 역전시켰습니다. 반면 파라과이 전쟁에서는 파라과이가 초기 공세를 통해 브라질과 아르헨티나의 영토를 공격했으나, 이후 방어 중심 전략과 게릴라전으로 전환했습니다.</p>
+
+<p>따라서 두 전쟁은 각각의 독특한 전쟁 양상을 보였다는 사실을 알 수 있습니다.</p>
+
+<p>남북전쟁은 자국내 대립에서 산업적 우위와 병력의 양이 중요했으며, 파라과이 전쟁은 일대다수의 전쟁 속에서 방어적인 전략과 게릴라 전이 중요한 전쟁의 요소 였습니다.</p>
+
+<p>이러한 차이점들을 가지고 있기 때문에 우리는 파라과이 전쟁 데이터를 적용해 봄으로 서 논문에서 제안한 모델이 여러 전쟁 상황을 설명할 수 있는 모델인지 확인하고자 하였습니다.</p>
+
+<h2 id="2-data">2. Data</h2>
+
+<p>본격적인 데이터의 적용에 앞서 데이터의 수집 과정에 대해서 말씀드리겠습니다. 우선, 모든 전투 데이터를 수집하지 않았으며, 저희는 <strong>주요한 전투</strong>만을 대상으로 데이터를 수집했습니다. 이는 전쟁에서 유의미한 역할을 한 전투를 분석해서 모델이 이 전투들을 잘 해석하는지 확인하여 모델의 정확도와 전쟁에 적용 가능성을 확인하기 위해서입니다.</p>
+
+<p><img src="/assets/images/combet_model/1.png" alt="Data" />
+<a href="https://en.wikipedia.org/wiki/List_of_battles_of_the_Paraguayan_War">https://en.wikipedia.org/wiki/List_of_battles_of_the_Paraguayan_War</a></p>
+
+<p>조사된 전투들 중 <strong>손실 없이 다른 쪽이 항복으로 끝난 전투</strong>는 포함하지 않았습니다. 손실이 0일 경우 모델에 적용이 어려우며, 보통 이러한 전투는 짧은 시간 내에 종료되기 때문에, 전투의 전술보다는 예기치 못한 상황으로 인한 결정이 크다고 생각했습니다.</p>
+
+<p>또한, <strong>손실이 대포의 수나 배의 수로만 표기된 전투</strong>도 제외했습니다. 그 이유는 논문의 모델이 전투를 분석할 때 <strong>전투 병력의 수</strong>를 주요 변수로 사용하기 때문입니다. 무기나 장비의 수치만으로는 병력 규모와 전투력을 적절히 반영할 수 없다고 보았습니다.</p>
+
+<p>이러한 과정으로 데이터의 신뢰성을 높이고, 모델이 의미 있는 결과를 도출할 수 있도록 데이터 셋을 제작하였습니다. 하지만 과거에 일어나고 남아메리카에서 일어난 전투이기에 많은 기록이 없었으며, 이들 중 전쟁에 영향을 미친 전투들을 선별하여, 총 14개의 전투를 선별할 수 있었습니다.</p>
+
+<p>논문에서 나타난 대로 전투를 두 가지로 분류하였으며, 분류당 각각 7개의 전투로 구성되어 있습니다.</p>
+
+<h2 id="3-analysis">3. Analysis</h2>
+
+<p><img src="/assets/images/combet_model/2.png" alt="Analysis" /></p>
+
+<p>이제 전체 전쟁에 대한 분석을 우선적으로 진행하겠습니다. 가장 위에 있는 그래프는 전쟁의 전체적인 전력의 비율입니다. 파라과이 전력을 연합군 전력으로 나눈 값을 시간의 흐름에 따라서 정리했습니다. 이를 보면 처음 전투들부터 파라과이의 전력이 연합군 전력에 비해서 상대적으로 낮다가 이후 점점 낮아지는 형태를 보입니다. 그 원인은 우선 삼국이 연합한 진영을 파라과이 한 국가가 상대했기 때문이라고 볼 수 있습니다. 또한 전력의 전체 평균을 보면 0.39로 평균적으로 연합군이 파라과이 보다 약 2.5배 큰 전력을 가지고 있다는 사실을 알 수 있습니다. 또한 양측의 피해를 보면 파라과이가 연합국보다 약 5배의 피해를 평균적으로 더 입었다는 사실을 알 수 있습니다.</p>
+
+<p><img src="/assets/images/combet_model/3.png" alt="Loss_1" /></p>
+
+<p>다음으로 각 진영의 사상자 비율입니다. 파라과이의 경우 평균적으로 전투에 참여한 전력 중 약 64%가 전투로 인해서 손실을 입었으며, 연합군은 평균적으로 약 15%의 손실을 입고 있는 것을 알 수 있습니다. 이러한 수치들로 보았을 때, 이 전쟁은 연합군의 전력으로 파라과이를 괴멸한 전투의 양상을 보인다는 사실을 알 수 있습니다.</p>
+
+<p><img src="/assets/images/combet_model/4.png" alt="Meeting engagement" /></p>
+
+<p>위의 데이터들 중 meeting engagement를 분석한 표입니다. 이전에 설명했던 모델에 따라서 구해야 하는 값들을 구하고 그에 따라서 손실율과 연합군의 승리 확률을 구했습니다. 여기서 f_1은 파라과이의 손실율이고 f_2는 연합군의 손실율입니다. 이제 이를 그래프로 그려서 더 자세하게 분석해 보겠습니다.</p>
+
+<p><img src="/assets/images/combet_model/5.png" alt="loss" /></p>
+
+<p>모델로 구현 한 이론 손실율과 실제 손실율입니다. 그래프에서 알 수 있다시피 F_1은 전혀 그 값을 못 맞추고 있으며, f_2는 어느정도 비슷한 값을 가진다는 사실을 알 수 있습니다. 하지만 그것도 정확하게 일치하는 것이 아니며, 값과 경향성이 상대적으로 f_1보다는 낫다는 사실을 알 수 있었습니다.</p>
+
+<p>F_1의 이론적인 손실율의 값이 실제값과 다르다는 것을 알았기에 경향성을 알아보기 위해서 두 개의 축으로 이루어진 그래프를 그렸습니다. 이를 보았을 때 이론값과 실제 값이 경향성 또한 비슷하지 않고, 많이 벗어나는 모습을 보입니다.</p>
+
+<p><img src="/assets/images/combet_model/6.png" alt="Probability of win" /></p>
+
+<p>마지막으로 오른쪽 그림은 승리 확률을 시각화한 그림입니다. 여기서 알 수 있듯이 대부분의 전투에서 연합군이 이길 확률이 90퍼센트 정도이며, 어떤 경우는 100퍼센트가 나타나는 경우도 있습니다. 하지만 이러한 상황들 중 연합군의 승리 확률이 가장 낮은 전투에서 파라과이 군이 승리하게 되었습니다.</p>
+
+<p><img src="/assets/images/combet_model/7.webp" alt="Fortified line" /></p>
+
+<p>다음은 Fortified line을 분석한 결과입니다. Meeting engagement와 마찬가지로 이전에 설명했던 모델에 따라서 구해야하는 값을 구하고 그에 따라 손실율과 승리 확률을 계산했습니다. 여기서 f_a는 공격군의 손실율이며, f_d는 방어군의 손실율입니다.</p>
+
+<p><img src="/assets/images/combet_model/8.png" alt="Defender" /></p>
+
+<p>우선적으로 공격자와 방어자에 대한 분석을 진행하였습니다. 왼쪽 그래프는 Defender의 전투력에 따른 공격자의 loss입니다. 이 그래프에서 조사한 데이터의 추세선은 이렇게 나타나지만 논문의 데이터의 추세선은 y = 0.2 * x + 1500으로 나타납니다. 따라서 방어자에 전력이 공격자의 loss에 더 큰 영향을 미친다는 사실을 알 수 있었습니다.</p>
+
+<p>또한 논문에서 제시된 공격자 loss에 따른 방어자 loss는 현재 보이는 기준선의 아래에 데이터가 위치하지만 제가 조사한 데이터는 기준선 위에도 데이터가 분포한다는 사실을 알 수 있습니다. 이를 통해서 우리는 더욱 다양한 전투 데이터를 모델에 적용했다는 사실을 알 수 있었습니다.</p>
+
+<p><img src="/assets/images/combet_model/9.png" alt="Probability of win" /></p>
+
+<p>이제 이 데이터를 모델에 대입하여서 공격자의 승리 확률을 계산하고 이를 시각화 한 그림입니다. 여기서 알 수 있듯. D = 0.14를 기준으로 공격자의 승리가 방어자의 승리가 나타난다는 사실을 알 수 있습니다. 이 값은 논문에서 제시된 값으로 이 값을 넘어설 때 방어자가 모두 승리한다는 데이터에서 얻은 값입니다. 중앙에 있는 이 데이터는 D = 0.138 이고 공격자가 승리할 확률이 약 45%이기 때문에 방어자가 승리 하였습니다.</p>
+
+<p>논문에서 설명한 기준과 확실히 부합하지는 않지만 어느정도 승리와 패배가 정해지는 것으로 보아 이 데이터에도 모델이 정확하게 적용이 됨을 알 수 있었습니다. 하지만 정확하게 공격군의 승리 확률이 50%가 되는 시점은 D = 0.132일 때이기 때문에 논문에서 제시한 값은 그저 데이터를 기반으로 얘기한 것이고, 정확하게 나타내기 위해서 기준을 조정해야 한다고 생각합니다.</p>
+
+<h2 id="4-conclusion">4. Conclusion</h2>
+
+<p>이제 파라과이 전쟁을 논문에서 제시한 모델로 분석한 결과를 말씀드리겠습니다.</p>
+
+<p>피해가 비슷했던 미국 남북 전쟁과 다르게 파라과이 전쟁은 파라과이 측의 과도한 피해가 있었습니다. 따라서 모델을 적용했을 때 벗어나는 부분도 있었지만 어느정도 맞는 부분도 존재했습니다.</p>
+
+<p>Meeting engagement 같은 경우, 파라과이 측의 손실율은 정확하게 예측하지 못했지만 연합군 측의 손실은 어느정도 예측한다는 사실을 알 수 있었습니다. 승리할 확률은 연합군이 항상 높았고 연합군이 대부분 이겼지만 연합군이 승리할 확률이 제일 낮은 전투에서는 파라과이 군이 이기는 모습도 볼 수 있었습니다.</p>
+
+<p>Fortified Line에서는 논문에서 제시된 상황보다 더 많은 상황을 적용했음에도 논문에서 제시한 방식에 적합하다는 것을 알 수 있습니다. 구해진 D 값에 따라 승리 확률이 나타나고 그에 따라 공격자의 승리가 정해진다는 사실을 알 수 있었습니다. 하지만 승리 확률이 100퍼센트를 넘는 경우도 나타나는 것으로 보아 정확하게 상황을 묘사한다고 느낄 수는 없습니다.</p>
+
+<p>이를 통해서 다양한 데이터의 적용을 시도해보았고 많은 수의 데이터를 쓴 것이 아니기 때문에 정확하다고는 못하지만 어느정도 들어 맞는 다는 사실을 알 수 있습니다. 따라서 논문의 내용은 이 시대의 전투를 올바르게 분석하고 있다는 사실을 알 수 있었습니다.</p>]]></content><author><name>Jeveon</name></author><category term="Project" /><category term="Combet models" /><summary type="html"><![CDATA[1. Intro]]></summary></entry><entry><title type="html">Brain Decoding, Deep learning and Dream</title><link href="https://jeveon.github.io//jekyll-theme-yat/report/2024/11/27/brain.html" rel="alternate" type="text/html" title="Brain Decoding, Deep learning and Dream" /><published>2024-11-27T00:00:00+00:00</published><updated>2024-11-27T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/report/2024/11/27/brain</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/report/2024/11/27/brain.html"><![CDATA[<h2 id="brain-decoding">Brain Decoding</h2>
+
+<p>Brain Decoding is a technology that analyzes neural activation patterns in the brain to decode a person’s thoughts, visual experiences, or movement intentions. As shown in the image below, brain activity patterns are measured using various methods. The recorded data is then analyzed through a decoder to infer a person’s thoughts, intentions.</p>
+
+<p><img src="/assets/images/brain/1.png" alt="brain" />
+https://link.springer.com/chapter/10.1007/978-3-031-20910-9_18/figures/1
+https://spj.science.org/doi/10.34133/cbsystems.0044</p>
+
+<p>Brain Decoding has numerous applications. For instance, it can be used in Brain-Computer Interfaces (BCIs) to control external devices by directly connecting the brain and computers. It is also used in mental health treatments, such as addressing trauma, and in reconstructing images or videos a person is viewing. Additionally, it may even allow us to record the content of dreams during sleep.</p>
+
+<h2 id="deep-learning">Deep learning</h2>
+
+<p>Deep Learning is a branch of Machine Learning (ML) and it uses Artificial Neural Networks (ANNs) to learn from data. Unlike traditional Rule-Based systems, where explicit rules are defined by humans, ML approaches enable computers to learn patterns and rules directly from data.</p>
+
+<p>Deep Learning is characterized by deeper and more complex structures. Artificial Neural Networks (ANNs) are inspired by the human brain and consists of multiple layers. Each layer’s nodes extract features from the input data and pass them to the next layer. Through this process, higher-level features are learned. Deep Learning surpasses simple linear operations, enabling the learning of nonlinear relationships, and it allows it to effectively handle complex data patterns that are challenging to define manually.</p>
+
+<p>So why is Deep Learning necessary? While Deep Learning requires large amounts of data and significant computational resources for training, making it impractical for all scenarios, but it is essential to Brain Decoding.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spike-waves.png" alt="Signal" /></p>
+
+<p>The signals are that we receive from the brain. The signals are not as straightforward. Instead, they comprise diverse and complex values. Analyzing these signals one by one and defining rules for them would require an enormous amount of time. Thus, the ML approach, particularly Deep Learning, which automatically identifies features and rules, is crucial for making predictions and interpreting brain signals more effectively.</p>
+
+<h2 id="cnn-convolutional-neural-network">CNN: Convolutional Neural Network</h2>
+
+<p><img src="/assets/images/brain/3.png" alt="CNN" />
+https://www.linkedin.com/pulse/what-convolutional-neural-network-cnn-deep-learning-nafiz-shahriar</p>
+
+<p>Now, let me explain the three most used Deep Learning models in Brain Decoding. CNN (Convolutional Neural Network) is architecture designed to process images or unstructured data. CNNs extract features from input data using filters to learn local patterns while incorporating nonlinear functions to capture complex data relationships. Pooling layers reduces the size of the feature maps, summarizing important information and improving computational efficiency. Finally, the features pass through fully connected layers for final classification or prediction. Therefore, CNNs is good at preserving spatial information while learning from data.</p>
+
+<h2 id="rnn-recurrent-neural-network">RNN: Recurrent Neural Network</h2>
+
+<p><img src="/assets/images/brain/4.png" alt="RNN" />
+https://www.analyticsvidhya.com/blog/2022/03/a-brief-overview-of-recurrent-neural-networks-rnn/
+https://dgkim5360.tistory.com/entry/understanding-long-short-term-memory-lstm-kr</p>
+
+<p>Recurrent Neural Networks (RNNs) are architecture designed to process and learn from sequential data, such as time-series data and text.
+RNNs transmit information through input data and hidden states, learning the temporal relationships within data. By receiving information from previous time steps, they capture the context of sequential data. However, RNNs face challenges when learning long sequences, as the influence of early input data diminishes over time. To address this, variants like Long Short-Term Memory (LSTM) were developed, enabling more effective learning of long-term dependencies.</p>
+
+<h2 id="dbns-deep-belief-networks">DBNs: Deep Belief Networks</h2>
+
+<p>Finally, Deep Belief Networks (DBNs) are composed of multiple stacked Restricted Boltzmann Machines (RBMs).</p>
+
+<p><img src="/assets/images/brain/5.png" alt="RBM" />
+https://www.analyticsvidhya.com/blog/2022/03/an-overview-of-deep-belief-network-dbn-in-deep-learning/</p>
+
+<p>An RBM consists of a visible layer (input layer) and a hidden layer and operates as a two-layer neural network. RBMs learn data in an unsupervised manner, modeling the distribution of the input data. The first RBM learns the original data, while subsequent RBMs use outputs of the previous RBM as their input, progressively extracting higher-level features. After pretraining, the entire network is fine-tuned through supervised learning. This enables DBNs to automatically find meaningful features from input data.</p>
+
+<p>So, we learned about the kinds of DL models that we use for brain decoding. With these models, we can do brain decoding in different fields, but I’m going to talk about how to decode dreams. So, first, we need to know exactly what dream is.</p>
+
+<h2 id="what-is-dream">What is Dream?</h2>
+
+<p>Dreaming is a mental phenomenon that occurs mainly during sleep, which means a state in which various images and emotions are mixed.
+When a person goes to sleep, it goes through the Non-REM stage and REM stage, and usually begins to dream in the REM stage.</p>
+
+<p><img src="/assets/images/brain/6.png" alt="Dream" />
+https://www.shutterstock.com/ko/search/hippocampus-neocortex?image_type=illustration
+https://www.simplypsychology.org/sleep-stages.html</p>
+
+<p>In the REM stage, the hippocampus regenerates recent memories and the neocortex reconstructs memories. Currently, neurotransmitters cause abnormal and creative connections, and various pieces of memory form a dream. Additionally, because the brain’s frontal lobe is inactivated, the time sequence may be mixed up in dreams or situations that are impossible may appear. However, we can feel various emotions in dreams because the amygdala, which is related to emotions, works actively in dreams.</p>
+
+<p>During the dream, the brain stores and reconstructs memory. Because of this a process, dreams have four characteristics.</p>
+
+<p>First, it reflects the concerns and feelings of recent life. Reconfigure the previous day’s events by mixing them with various memories reflecting the long-term and short-term feelings and concerns</p>
+
+<p>Second, creativity, future prediction, and the connection of various memories lead to creative thinking. It also analyzes past patterns and warns of important problems in the future.</p>
+
+<p>Third, it helps strengthen memory. New memories are stored in a more permanent form during sleep, and dreams could be a piece of memory of that process.</p>
+
+<p>Finally, Dream is easy to forget: The content of the dream itself is excluded from the long-term memory process, and only the amygdala is activated, so if you don’t feel the emotion in the dream, it is easily forgotten.</p>
+
+<h2 id="recent-research">Recent Research</h2>
+
+<p>Then, what if the researcher creates a technology to represent dreams as images? We will be able to see the concerns or feelings in our dreams again and get one step closer to the answer our minds want. It can also increase our fun and creativity with experiences that we cannot experience in real life.</p>
+
+<p>So let me briefly introduce you to a paper that I recently researched about dreams. The name of the paper is this. (<a href="https://ieeexplore.ieee.org/abstract/document/10405808">Dream Emotions Identified Without Awakenings by Machine and Deep Learning in REM Sleep</a>).</p>
+
+<p><img src="/assets/images/brain/7.png" alt="Research" />
+https://www.cookchildrens.org/services/neurosciences-research/technology/hdeeg/ 
+https://progressiveneurosleep.com/electroencephalography-eeg/</p>
+
+<p>The research process is like this. Subjects wear EEG sensors while sleeping. When sensors detect REM sleep, they are awakened to report their dreams. The collected EEG data were mapped as shown in the pictures below. Using this collected data, we predict the emotions experienced during a dream using a hybrid model that combines CNN and ML. The accuracy of distinguishing whether a dream has emotions is about 66%, and the accuracy of predicting whether a dream is positive or negative is about 64%. You might think it is a simple study, but it is less accurate. So, making a completely reconstructed video of a dream remains a task for future research.</p>
+
+<h2 id="future-work">Future Work</h2>
+
+<p>You may think that we have too long a way to go. but, I think the field of analyzing dreams will develop faster with the recent development of AI. So I we brought a video to inspire you about dream decoding.</p>
+
+<p><a href="https://www.youtube.com/watch?v=4njQv5iBCHo">Video</a></p>
+
+<p>In this video, I think it’s a good representation of a dream. It changes quicky around you and flies in the sky or sees people you’ve never seen before. However, it’s not a real video of dream decoding, but it creatively describes what future dream decoding will look like.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Exploring the unknown has always been an exciting journey. By studying dreams, we may find ourselves closer to unlocking the depths of our subconscious. And to reach this subconscious, deep learning methods will be essential. Someday, I hope we can start each morning by watching the dreams we had the night before. Thank you.</p>
+
+<h2 id="reference">Reference</h2>
+
+<p>https://www.infinumgrowth.com/importance-of-dreams/
+https://www.sleep.or.kr/html/?pmode=dream
+https://brunch.co.kr/@newhappylife/21
+https://ko.wikipedia.org/wiki/%EA%BF%88
+https://en.wikipedia.org/wiki/Dream
+https://www.bbc.com/news/science-environment-22031074
+https://www.sciencedirect.com/science/article/pii/S0960982211009377?via%3Dihub
+https://www.science.org/doi/10.1126/science.1234330
+https://en.wikipedia.org/wiki/Electroencephalography</p>]]></content><author><name>Jeveon</name></author><category term="Report" /><category term="Brain Decoding" /><category term="Dream" /><summary type="html"><![CDATA[Brain Decoding]]></summary></entry><entry><title type="html">sLLM and Fine-Tuning to Reduce Energy Consumption</title><link href="https://jeveon.github.io//jekyll-theme-yat/report/2024/06/13/sllm.html" rel="alternate" type="text/html" title="sLLM and Fine-Tuning to Reduce Energy Consumption" /><published>2024-06-13T00:00:00+00:00</published><updated>2024-06-13T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/report/2024/06/13/sllm</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/report/2024/06/13/sllm.html"><![CDATA[<p><img src="/assets/images/Energy.png" alt="enery" />
+<a href="https://www.researchgate.net/figure/Reported-energy-consumption-of-training-different-LLM-models-with-respect-to-model_fig5_384115745">Link</a></p>
+
+<h2 id="1----introduction-importance-of-sllm"><strong>1.</strong>    <strong>Introduction: Importance of sLLM</strong></h2>
+
+<p>In recent years, AI and ML technologies have advanced rapidly. AI can now handle a wide range of tasks, from simple activities like image generation and voice recognition to complex tasks such as creating long videos, composing new music, and facilitating real-time human communication. Moreover, AI is increasingly integrated into everyday devices like smartphones. However, amidst these advancements, there is a need to address the drawbacks of AI, particularly its significant energy consumption during the training process.</p>
+
+<p>One of the most widely used AI models today is the Large Language Model (LLM), which requires extensive training involving a massive number of parameters. These models, such as OpenAI’s GPT-3, are designed to understand and generate human-like text by processing vast amounts of data. However, training such models is extremely resource-intensive. According to a report by Google in July 2019, training a language model with 110 million parameters consumes as much energy as a transcontinental flight. ChatGPT-3, with its 175 billion parameters, requires energy comparable to the output of a large nuclear power plant for one hour. This immense energy consumption is a significant concern, contributing to carbon emissions and high operational costs.</p>
+
+<p>As the demand for more advanced AI models grows, the energy required for training these models could become a major obstacle. This highlights the need for small Language Models (sLLMs), which aim to maintain high performance while significantly reducing the number of parameters and computational resources required. sLLMs can significantly reduce the energy required for both training and inference processes, making them suitable for deployment in resource-constrained environments like mobile devices and embedded systems. These models retain 70-90% of the performance of their larger counterparts while drastically reducing the number of parameters and computational load.</p>
+
+<h2 id="2----body-fine-tuning-techniques"><strong>2.</strong>    <strong>Body: Fine-Tuning techniques</strong></h2>
+
+<p>sLLM achieves efficiency through a variety of advanced fine-tuning techniques. Fine-tuning is an important process that enhances the performance of small language models (sLLM), allowing them to adapt to specific tasks with higher accuracy. For example, fine-tuning general language models into medical or legal texts can improve the performance of specialized fields. This targeted approach allows sLLM to deliver high performance while maintaining energy efficiency and suitability for resource-constrained environments. I will describe four techniques of fine-tuning.</p>
+
+<p>The first is transfer learning, which utilizes the weights of a pre-trained model as a starting point for a new task. By using features trained on a large, common dataset, the model requires less data and time to adapt to new, specific tasks. Transfer learning works by fixing some of the early layers of a pre-trained model that capture general features, and fine-tuning only the later layers that capture task-specific features. This reduces the computational load and speeds up the fusion process.</p>
+
+<p>The second is knowledge distillation, which involves training a smaller, more efficient model (the student) to mimic the behavior of a larger, pre-trained model (the teacher). In the process, the student model learns to reproduce the output distribution of the teacher model, effectively capturing the knowledge encoded in the larger model. This approach is particularly useful for deploying models in resource-constrained environments, as smaller models can achieve similar results to larger models with significantly reduced computational demands.</p>
+
+<p>The third is parameter pruning, which identifies and removes the weights or neurons in the model that contribute the least to the output. It can be done globally or on a layer-by-layer basis, and can be done iteratively as a training or post-training step. Reducing the number of parameters can reduce the size and computational requirements of the model without significantly impacting performance. This technique is useful for deploying models on devices with limited memory and processing power.</p>
+
+<p>The last is quantization. Quantization reduces the precision of the model weights from floating point to a lower bit representation (e.g., 32 bits to 8 bits). This process speeds up inference by reducing the size of the model and allowing more efficient hardware operations to be used. Quantization can be applied during training (quantization-aware training) or as a post-training optimization. This technique is particularly effective for deploying models on mobile devices and embedded systems with limited computing resources.</p>
+
+<p>These techniques significantly improve the performance of sLLM. They are also highly efficient and suitable for a variety of specific tasks with low computing and energy requirements. Thus, the development and fine-tuning of sLLM is critical for creating energy-efficient AI models that can be effectively deployed in various resource-constrained environments.</p>
+
+<h2 id="3----conclusion-the-future-of-ai"><strong>3.</strong>    <strong>Conclusion: The Future of AI</strong></h2>
+
+<p>The resources we are given are not infinite. That is why it is of utmost importance to advance AI technology into an energy-efficient model that can sustain our progress within a limited resource. In future research, I believe that priority should be given to enhancing model compression techniques such as pruning and quantization in order to significantly reduce AI model size and computational demand while maintaining a high-performance level. Hardware optimization efforts should focus on designing specialized AI accelerators and energy-efficient processors to minimize the energy footprint of AI applications. Implementing sustainable AI training practices, such as utilizing renewable energy sources and optimizing data center operations, will be critical to reducing environmental impact. I will end this article hoping that expanding sLLM that cover diverse applications in healthcare, finance, and education will bring AI broader social benefits.</p>
+
+<h2 id="reference"><strong>Reference</strong></h2>
+
+<p><a href="https://www.hani.co.kr/arti/science/technology/1140136.html">https://www.hani.co.kr/arti/science/technology/1140136.html</a></p>
+
+<p><a href="https://www.h2news.kr/news/articleView.html?idxno=12511">https://www.h2news.kr/news/articleView.html?idxno=12511</a></p>
+
+<p><a href="https://kr.appen.com/blog/fine-tuning/">https://kr.appen.com/blog/fine-tuning/</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Fine-tuning_\(deep_learning\)">https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)</a></p>
+
+<p><a href="https://www.gttkorea.com/news/articleView.html?idxno=6853">https://www.gttkorea.com/news/articleView.html?idxno=6853</a></p>
+
+<p><a href="https://biz.chosun.com/it-science/ict/2024/05/03/TILI5ZARGVDX5JICKRAHP7H6RA/">https://biz.chosun.com/it-science/ict/2024/05/03/TILI5ZARGVDX5JICKRAHP7H6RA/</a></p>]]></content><author><name>Jeveon</name></author><category term="Report" /><category term="LLM" /><category term="Fine-Tuning" /><category term="Energy consumption" /><summary type="html"><![CDATA[Link]]></summary></entry><entry><title type="html">Prompt Engineering</title><link href="https://jeveon.github.io//jekyll-theme-yat/report/2024/05/03/Prompt.html" rel="alternate" type="text/html" title="Prompt Engineering" /><published>2024-05-03T00:00:00+00:00</published><updated>2024-05-03T00:00:00+00:00</updated><id>https://jeveon.github.io//jekyll-theme-yat/report/2024/05/03/Prompt</id><content type="html" xml:base="https://jeveon.github.io//jekyll-theme-yat/report/2024/05/03/Prompt.html"><![CDATA[<p>Prompts are natural language text that asks a generative AI to perform a specific task.</p>
+
+<p>Large language models (LLMs) are very flexible and can perform many different tasks. However, they are also very open-ended, meaning that a change in a single prompt word can cause the system to generate a detailed response.</p>
+
+<p>However, not all types of input will produce useful output; generative AI systems need context and detail to generate accurate and relevant responses. By systematically designing prompts, you can achieve more meaningful and useful outputs.</p>
+
+<p><img src="/assets/images/Prompt/1.webp" alt="Prompt Engineering-20250207151912989.webp" /></p>
+
+<p>This table is taken from the paper “Large Language Models are Zero-Shot Reasoners” published in 2022.</p>
+
+<p>As you can see, typing “Let’s think step by step.” into the prompt results in higher accuracy compared to the other inputs. However, “Let’s think like a detective step by step.” is less accurate.</p>
+
+<p>So we can get better answers by making sure that we’re feeding the model the right inputs. Now, let’s look at some more simple engineering techniques. In this presentation, I’ll cover five techniques.</p>
+
+<h2 id="zero-shot">Zero-shot</h2>
+<p>The first is zero-shot prompting.</p>
+
+<p>This is like the one we use all the time. We just present the question we want to ask, and a given situation. Like the example you see, where you’re asked if a sentence is positive, negative, or neutral, and you’re given a sentence and asked to answer.</p>
+
+<p><img src="/assets/images/Prompt/2.png" alt="Pasted image 20250207152047.png" /></p>
+
+<h2 id="few-shot">Few-shot</h2>
+<p>The next approach is called few-shot prompting.</p>
+
+<p><img src="/assets/images/Prompt/3.webp" alt="Prompt Engineering-20250207152034212.webp" /></p>
+
+<p>This is a technique that allows for in-context learning, where the prompts provide a demonstration to guide the model to perform better. When it sees an example, it determines the state of several sentences and asks questions about the desired sentence. If it finds the task more challenging, it can increase the number of examples to get results.</p>
+
+<p>When using Few-shot, performance improves even when individual inputs are not correct, as in the example shown here. “This is bad” is a negative sentence, but the output is still correct in the end.</p>
+
+<p>And even using just random labels, as shown below, yields much better performance than no labels at all.</p>
+
+<p>But there are still limitations. For complex reasoning, the performance of the few-shot approach is poor.</p>
+
+<p>The example on the right is the problem of determining whether the sum of a group is even or odd. We think this is a very simple problem, but the few-shot method gives the wrong result, and the same result is obtained with more shots.</p>
+
+<h2 id="cot-prompting">CoT Prompting</h2>
+
+<p>To solve this problem, we use Chain-of-Thought (CoT) Prompting. Chain-of-thought (CoT) prompts allow for complex reasoning with intermediate reasoning steps. Combine this with short-answer prompts and you get better results on complex tasks that require reasoning before responding. Adding just one example is enough to address this challenge:</p>
+
+<p>If we put the process of getting the right answer into the prompt, as in the example shown, we would get more accurate results.</p>
+
+<p><img src="/assets/images/Prompt/4.png" alt="Prompt Engineering-20250207152121424.webp" />
+“Chain-of-Thought Prompting Elicits Reasoning in Large Language Models” , Wei et al., 2022</p>
+
+<h2 id="self-consistency">Self-Consistency</h2>
+
+<p>The above CoT can be further improved: it’s called self-consistency. A few-shot CoT samples several different reasoning paths, generates multiple prompts, and selects the most consistent answer. This can improve the performance of chain-of-think prompts on tasks involving arithmetic and common-sense reasoning.</p>
+
+<p>By showing the different ways to arrive at the correct answer, we can show better answers.</p>
+
+<p><img src="/assets/images/Prompt/5.webp" alt="Prompt Engineering-20250207152154190.webp" />
+“Self-Consistency Improves Chain of Thought Reasoning in Language Models” , Wang et al.,2022</p>
+
+<h2 id="react-prompting">ReAct prompting</h2>
+
+<p>ReAct is inspired by the synergy between “action” and “reasoning” that enables humans to learn new tasks and make decisions or inferences. ReAct drives large-scale language models to generate linguistic reasoning traces and actions for a task. This allows the system to create, maintain, and adjust plans for its actions, while incorporating additional information into its reasoning through interaction with the external environment.</p>
+
+<p>In “Thought,” you write down the question you want to ask, and then in “Act,” you write down how you want to find the answer to the question - in this example, you search for Apple remote. Then in “Observe,” you see what you find through your actions and move on to the next Thought. When we put this process together with our questions, we can extract very high performance.</p>
+
+<p><img src="/assets/images/Prompt/6.png" alt="Pasted image 20250207152215.png" /></p>
+
+<p>This is currently being attempted in a variety of ways.  However, even with these advances, we have doubts that we will ever be able to use them in practice: we will always need to modify the prompts to get the answers in the areas we want.</p>
+
+<p>So, let me introduce you to one site that can solve this problem.</p>
+
+<h2 id="poe-artificial-intelligence-chatbot-service">Poe (artificial intelligence chatbot service)</h2>
+
+<p>POE is a platform developed by Quora, an American question and answer website. Quora, which has 600 million users as of 2021, is using data from the site to create a generative AI platform.</p>
+
+<p>You can also set up a knowledge base for answers and make them refer to specific sites.</p>
+
+<p>Some chatbots, like the one you see on the screen, tell you how to ask someone out on a date.</p>
+
+<p>I asked how to ask someone out on a date and got a lot of advice on how to do that. There are other chatbots that specialize in coding or academics, for example.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Generative AI can perform as well as humans, books, and the internet, and it can interact with a wide range of knowledge, so I think it will become increasingly useful for acquiring knowledge in society. I also think it will one day surpass books and people.</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li>https://www.promptingguide.ai/kr</li>
+  <li>https://poe.com</li>
+  <li>https://deep-learning-study.tistory.com/873</li>
+  <li>https://www.ibm.com/kr-ko/topics/chain-of-thoughts</li>
+  <li>https://velog.io/@xuio/SELF-CONSISTENCY-IMPROVES-CHAIN-OF-THOUGHT-REASONING-IN-LANGUAGE-MODELS</li>
+  <li>https://wiz-tech.tistory.com/entry/ReAct-Prompting-%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC</li>
+</ul>]]></content><author><name>Jeveon</name></author><category term="Report" /><category term="Prompt Engineering" /><category term="LLM" /><summary type="html"><![CDATA[Prompts are natural language text that asks a generative AI to perform a specific task.]]></summary></entry></feed>

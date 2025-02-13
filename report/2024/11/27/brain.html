@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Brain Decoding, Deep learning and Dream | Jaewon Jang</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Brain Decoding, Deep learning and Dream">
+<meta name="author" content="Jeveon">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Brain Decoding">
+<meta property="og:description" content="Brain Decoding">
+<link rel="canonical" href="https://jeveon.github.io//jekyll-theme-yat/report/2024/11/27/brain.html">
+<meta property="og:url" content="https://jeveon.github.io//jekyll-theme-yat/report/2024/11/27/brain.html">
+<meta property="og:site_name" content="Jaewon Jang">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-11-27T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Brain Decoding, Deep learning and Dream">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jeveon"},"dateModified":"2024-11-27T00:00:00+00:00","datePublished":"2024-11-27T00:00:00+00:00","description":"Brain Decoding","headline":"Brain Decoding, Deep learning and Dream","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeveon.github.io//jekyll-theme-yat/report/2024/11/27/brain.html"},"url":"https://jeveon.github.io//jekyll-theme-yat/report/2024/11/27/brain.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="">
+  <link rel="canonical" href="https://jeveon.github.io/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://jeveon.github.io//jekyll-theme-yat/feed.xml" title="Jaewon Jang">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/umd/photoswipe-lightbox.umd.min.js" async></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/umd/photoswipe.umd.min.js" async></script>
+<link href="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.7/photoswipe.min.css" rel="stylesheet">
+<style>
+  .pswp .pswp__container .pswp__img {
+    background-color: white;
+  }
+</style>
+
+<script>
+  function initPhotoSwipe() {
+    let customOptions = {};
+
+    try {
+      const data = ``.replaceAll("=>", ":");
+      customOptions = JSON.parse(data);
+    } catch (e) {
+      console.info("Invalid custom photo previewer options! " + e.message);
+    }
+
+    // Define object and gallery options
+    const options = Object.assign(
+      {
+        gallery: "section.main",
+        children: "a.photo-swipe",
+        photo_scale: 2,
+        // dynamic import is not supported in UMD version
+        pswpModule: PhotoSwipe,
+      },
+      customOptions
+    );
+
+    const galleryEl = document.querySelector(options.gallery);
+    if (!galleryEl) {
+      return;
+    }
+
+    const imgEls = [];
+    const els = galleryEl.querySelectorAll("img:not(.emoji)");
+    els.forEach((el) => {
+      if (el.src.trim() == "") {
+        return;
+      }
+      if (!imgEls.includes(el)) {
+        imgEls.push(el);
+      }
+    });
+
+    if (imgEls.length === 0) {
+      return;
+    }
+
+    imgEls.forEach((imgEl) => {
+      imgEl.outerHTML = `
+      <a class="photo-swipe"
+        href="${imgEl.src}"
+        data-pswp-width="${
+          Math.max(imgEl.naturalWidth, imgEl.width) * options.photo_scale
+        }"
+        data-pswp-height="${
+          Math.max(imgEl.naturalHeight, imgEl.height) * options.photo_scale
+        }"
+        data-pswp-caption="${imgEl.getAttribute("caption") || imgEl.alt}"
+        target="_blank">
+        ${imgEl.outerHTML}
+      </a>`;
+    });
+
+    // Initialize PhotoSwipe 5
+    var lightbox = new PhotoSwipeLightbox(options);
+
+    lightbox.init();
+  }
+
+  window.addEventListener("load", initPhotoSwipe);
+</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="Jaewon Jang" src="" onerror="this.style.display='none'">
+  Jaewon Jang
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<div class="page-link" style="display: inline;">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<div class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+</div>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('off' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Brain Decoding, Deep learning and Dream</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <div class="post-meta">
+    <time class="dt-published" datetime="2024-11-27T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Nov 27, 2024
+    </time>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 8 mins</span>
+  </div>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Brain%20Decoding">#Brain Decoding</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Dream">#Dream</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="brain-decoding">Brain Decoding</h2>
+
+<p>Brain Decoding is a technology that analyzes neural activation patterns in the brain to decode a person’s thoughts, visual experiences, or movement intentions. As shown in the image below, brain activity patterns are measured using various methods. The recorded data is then analyzed through a decoder to infer a person’s thoughts, intentions.</p>
+
+<p><img src="/assets/images/brain/1.png" alt="brain">
+https://link.springer.com/chapter/10.1007/978-3-031-20910-9_18/figures/1
+https://spj.science.org/doi/10.34133/cbsystems.0044</p>
+
+<p>Brain Decoding has numerous applications. For instance, it can be used in Brain-Computer Interfaces (BCIs) to control external devices by directly connecting the brain and computers. It is also used in mental health treatments, such as addressing trauma, and in reconstructing images or videos a person is viewing. Additionally, it may even allow us to record the content of dreams during sleep.</p>
+
+<h2 id="deep-learning">Deep learning</h2>
+
+<p>Deep Learning is a branch of Machine Learning (ML) and it uses Artificial Neural Networks (ANNs) to learn from data. Unlike traditional Rule-Based systems, where explicit rules are defined by humans, ML approaches enable computers to learn patterns and rules directly from data.</p>
+
+<p>Deep Learning is characterized by deeper and more complex structures. Artificial Neural Networks (ANNs) are inspired by the human brain and consists of multiple layers. Each layer’s nodes extract features from the input data and pass them to the next layer. Through this process, higher-level features are learned. Deep Learning surpasses simple linear operations, enabling the learning of nonlinear relationships, and it allows it to effectively handle complex data patterns that are challenging to define manually.</p>
+
+<p>So why is Deep Learning necessary? While Deep Learning requires large amounts of data and significant computational resources for training, making it impractical for all scenarios, but it is essential to Brain Decoding.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spike-waves.png" alt="Signal"></p>
+
+<p>The signals are that we receive from the brain. The signals are not as straightforward. Instead, they comprise diverse and complex values. Analyzing these signals one by one and defining rules for them would require an enormous amount of time. Thus, the ML approach, particularly Deep Learning, which automatically identifies features and rules, is crucial for making predictions and interpreting brain signals more effectively.</p>
+
+<h2 id="cnn-convolutional-neural-network">CNN: Convolutional Neural Network</h2>
+
+<p><img src="/assets/images/brain/3.png" alt="CNN">
+https://www.linkedin.com/pulse/what-convolutional-neural-network-cnn-deep-learning-nafiz-shahriar</p>
+
+<p>Now, let me explain the three most used Deep Learning models in Brain Decoding. CNN (Convolutional Neural Network) is architecture designed to process images or unstructured data. CNNs extract features from input data using filters to learn local patterns while incorporating nonlinear functions to capture complex data relationships. Pooling layers reduces the size of the feature maps, summarizing important information and improving computational efficiency. Finally, the features pass through fully connected layers for final classification or prediction. Therefore, CNNs is good at preserving spatial information while learning from data.</p>
+
+<h2 id="rnn-recurrent-neural-network">RNN: Recurrent Neural Network</h2>
+
+<p><img src="/assets/images/brain/4.png" alt="RNN">
+https://www.analyticsvidhya.com/blog/2022/03/a-brief-overview-of-recurrent-neural-networks-rnn/
+https://dgkim5360.tistory.com/entry/understanding-long-short-term-memory-lstm-kr</p>
+
+<p>Recurrent Neural Networks (RNNs) are architecture designed to process and learn from sequential data, such as time-series data and text.
+RNNs transmit information through input data and hidden states, learning the temporal relationships within data. By receiving information from previous time steps, they capture the context of sequential data. However, RNNs face challenges when learning long sequences, as the influence of early input data diminishes over time. To address this, variants like Long Short-Term Memory (LSTM) were developed, enabling more effective learning of long-term dependencies.</p>
+
+<h2 id="dbns-deep-belief-networks">DBNs: Deep Belief Networks</h2>
+
+<p>Finally, Deep Belief Networks (DBNs) are composed of multiple stacked Restricted Boltzmann Machines (RBMs).</p>
+
+<p><img src="/assets/images/brain/5.png" alt="RBM">
+https://www.analyticsvidhya.com/blog/2022/03/an-overview-of-deep-belief-network-dbn-in-deep-learning/</p>
+
+<p>An RBM consists of a visible layer (input layer) and a hidden layer and operates as a two-layer neural network. RBMs learn data in an unsupervised manner, modeling the distribution of the input data. The first RBM learns the original data, while subsequent RBMs use outputs of the previous RBM as their input, progressively extracting higher-level features. After pretraining, the entire network is fine-tuned through supervised learning. This enables DBNs to automatically find meaningful features from input data.</p>
+
+<p>So, we learned about the kinds of DL models that we use for brain decoding. With these models, we can do brain decoding in different fields, but I’m going to talk about how to decode dreams. So, first, we need to know exactly what dream is.</p>
+
+<h2 id="what-is-dream">What is Dream?</h2>
+
+<p>Dreaming is a mental phenomenon that occurs mainly during sleep, which means a state in which various images and emotions are mixed.
+When a person goes to sleep, it goes through the Non-REM stage and REM stage, and usually begins to dream in the REM stage.</p>
+
+<p><img src="/assets/images/brain/6.png" alt="Dream">
+https://www.shutterstock.com/ko/search/hippocampus-neocortex?image_type=illustration
+https://www.simplypsychology.org/sleep-stages.html</p>
+
+<p>In the REM stage, the hippocampus regenerates recent memories and the neocortex reconstructs memories. Currently, neurotransmitters cause abnormal and creative connections, and various pieces of memory form a dream. Additionally, because the brain’s frontal lobe is inactivated, the time sequence may be mixed up in dreams or situations that are impossible may appear. However, we can feel various emotions in dreams because the amygdala, which is related to emotions, works actively in dreams.</p>
+
+<p>During the dream, the brain stores and reconstructs memory. Because of this a process, dreams have four characteristics.</p>
+
+<p>First, it reflects the concerns and feelings of recent life. Reconfigure the previous day’s events by mixing them with various memories reflecting the long-term and short-term feelings and concerns</p>
+
+<p>Second, creativity, future prediction, and the connection of various memories lead to creative thinking. It also analyzes past patterns and warns of important problems in the future.</p>
+
+<p>Third, it helps strengthen memory. New memories are stored in a more permanent form during sleep, and dreams could be a piece of memory of that process.</p>
+
+<p>Finally, Dream is easy to forget: The content of the dream itself is excluded from the long-term memory process, and only the amygdala is activated, so if you don’t feel the emotion in the dream, it is easily forgotten.</p>
+
+<h2 id="recent-research">Recent Research</h2>
+
+<p>Then, what if the researcher creates a technology to represent dreams as images? We will be able to see the concerns or feelings in our dreams again and get one step closer to the answer our minds want. It can also increase our fun and creativity with experiences that we cannot experience in real life.</p>
+
+<p>So let me briefly introduce you to a paper that I recently researched about dreams. The name of the paper is this. (<a href="https://ieeexplore.ieee.org/abstract/document/10405808">Dream Emotions Identified Without Awakenings by Machine and Deep Learning in REM Sleep</a>).</p>
+
+<p><img src="/assets/images/brain/7.png" alt="Research">
+https://www.cookchildrens.org/services/neurosciences-research/technology/hdeeg/ 
+https://progressiveneurosleep.com/electroencephalography-eeg/</p>
+
+<p>The research process is like this. Subjects wear EEG sensors while sleeping. When sensors detect REM sleep, they are awakened to report their dreams. The collected EEG data were mapped as shown in the pictures below. Using this collected data, we predict the emotions experienced during a dream using a hybrid model that combines CNN and ML. The accuracy of distinguishing whether a dream has emotions is about 66%, and the accuracy of predicting whether a dream is positive or negative is about 64%. You might think it is a simple study, but it is less accurate. So, making a completely reconstructed video of a dream remains a task for future research.</p>
+
+<h2 id="future-work">Future Work</h2>
+
+<p>You may think that we have too long a way to go. but, I think the field of analyzing dreams will develop faster with the recent development of AI. So I we brought a video to inspire you about dream decoding.</p>
+
+<p><a href="https://www.youtube.com/watch?v=4njQv5iBCHo">Video</a></p>
+
+<p>In this video, I think it’s a good representation of a dream. It changes quicky around you and flies in the sky or sees people you’ve never seen before. However, it’s not a real video of dream decoding, but it creatively describes what future dream decoding will look like.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Exploring the unknown has always been an exciting journey. By studying dreams, we may find ourselves closer to unlocking the depths of our subconscious. And to reach this subconscious, deep learning methods will be essential. Someday, I hope we can start each morning by watching the dreams we had the night before. Thank you.</p>
+
+<h2 id="reference">Reference</h2>
+
+<p>https://www.infinumgrowth.com/importance-of-dreams/
+https://www.sleep.or.kr/html/?pmode=dream
+https://brunch.co.kr/@newhappylife/21
+https://ko.wikipedia.org/wiki/%EA%BF%88
+https://en.wikipedia.org/wiki/Dream
+https://www.bbc.com/news/science-environment-22031074
+https://www.sciencedirect.com/science/article/pii/S0960982211009377?via%3Dihub
+https://www.science.org/doi/10.1126/science.1234330
+https://en.wikipedia.org/wiki/Electroencephalography</p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/report/2024/06/13/sllm.html" title="sLLM and Fine-Tuning to Reduce Energy Consumption">sLLM and Fine-Tuning to Reduce Energy...</a><a class="next" href="/jekyll-theme-yat/project/2024/11/28/combet.html" title="Combat models applied in the Paraguayan War">Combat models applied in the Paraguayan...</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li class="">
+          <a class="post-link" href="/jekyll-theme-yat/paper/2024/12/09/TAS.html" title="[논문 리뷰] Network Pruning via Transformable Architecture Search">
+            [논문 리뷰] Network Pruning via Transformable Architecture Search<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/jekyll-theme-yat/paper/2024/12/10/Random.html" title="[논문 리뷰] Revisiting Random Channel Pruning for Neural Network Compression">
+            [논문 리뷰] Revisiting Random Channel Pruning for Neural Network Compression<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/jekyll-theme-yat/report/2024/12/13/zero.html" title="Identifying Unknown Brain Image Using Zero-Shot Learning">
+            Identifying Unknown Brain Image Using Zero-Shot Learning<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/jekyll-theme-yat/project/2024/11/28/combet.html" title="Combat models applied in the Paraguayan War">
+            Combat models applied in the Paraguayan War<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2025 {Jeveon}</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
