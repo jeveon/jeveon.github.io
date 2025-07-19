@@ -1,4 +1,10 @@
-
+---
+layout: post
+title: "[논문 리뷰] One-shot active learning for image segmentation via contrastive learning and diversity-based sampling"
+categories: Paper
+excerpt_image: /assets/images/Con-2025-07-19/Untitled-20250719170953092.webp
+tags: [One-shot Active Learning, Image Segmentation, Contrastive Learning]
+---
 
 ## 1. Introduction
 
