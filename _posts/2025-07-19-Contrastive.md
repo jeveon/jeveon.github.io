@@ -29,10 +29,8 @@ unlabeled sample $x_u$로 구성된 $n$개의 sample pool을 $X_U$라고 가정�
 
 ### 2.2 Contrastive Self-supervised Feature Learning
 
-$$L_{\text{NCE}} = \mathbb{E}_{x, x^+, x^-} \left[ -\log \left( \frac{e^{f(x)^T f(x^+)}}{e^{f(x)^T f(x^+)} + e^{f(x)^T f(x^-)}} \right) \right] \tag{4}$$
-$$L_{\text{AUG}} = \mathbb{E}_{x,x^+,x^-} \left[ -\log \frac{e^{f(x)^T f(x^+)}}{e^{f(x)^T f(x^+)} + \sum_{k=1}^{K} e^{f(x)^T f(x_k^-)}} \right] \tag{5}$$
-$$L_{\text{MoCo}} = -\log \left( \frac{\exp(q \cdot k^+ / \tau)}{\sum_{i=0}^{K} \exp(q \cdot k^- / \tau)} \right) \tag{6}$$
-$$t^* = \arg\max_{t \sim \mathcal{J}} L_{\text{MoCo}}(\theta_M \mid t) \tag{7}$$
+![a](/assets/images/Con-2025-07-19/dd.png)
+
 본 논문에서 제안하는 framework는 feature space에서 sample 선택이 이루어지며 이때 사용되는 feature는 self-superives contrastive learning 방식을 통해서 추출한다. 비슷한 sample은 가깝게 다른 sample은 멀게 하도록 하는 것을 목적으로 하며 이를 위해서 4번식과 같은 loss function이 사용된다. 여기서 $x$와 $x^+$는 positive pair, $x$와 $x^-$는 negative pair, $f$는 encoder이다. $L_{NCE}$를 확장해 positive pair는 동일한 이미지에도 data augmentation을 적용해서 사용하고 negative pair는 서로 다른 이미지를 sampling해 구성되며, 이를 통해서 5번 식이 만들어진다.
 
 여기에 더불어 contrastive 표현의 성능을 높이기 위해서 Momentum Contrastive learning을 추가로 적용한다. 이 방식은 key encoder를 도입해서 positive sample과 negative sample을 생성하고 6번 식의 loss를 최소화 한다.
@@ -57,16 +55,16 @@ Skin Lesion Segmentation, Remote Sensing Image Segmentation, Chest X-ray Segment
 
 데이터 그래프에 표시되는 상한선과 하한선은 모든 데이터가 라벨 되었을 때의 성능을 의미한다. 아래는 각 데이터 셋에 대한 실험 결과이다.
 
-![[Untitled-20250719171319886.webp]]
+![a](/assets/images/Con-2025-07-19/Untitled-20250719171319886.webp)
 
-![[Untitled-20250719171337565.webp]]
+![a](/assets/images/Con-2025-07-19/Untitled-20250719171337565.webp)
 
-![[Untitled-20250719171350712.webp]]
+![a](/assets/images/Con-2025-07-19/Untitled-20250719171350712.webp)
 
-![[Untitled-20250719171412366.webp]]
+![a](/assets/images/Con-2025-07-19/Untitled-20250719171412366.webp)
 
-![[Untitled-20250719171422230.webp]]
+![a](/assets/images/Con-2025-07-19/Untitled-20250719171422230.webp)
 
 마지막으로 diversity-based query strategy의 시각화 결과이다.
 
-![[Untitled-20250719171617679.webp]]
+![a](/assets/images/Con-2025-07-19/Untitled-20250719171617679.webp)
