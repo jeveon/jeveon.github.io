@@ -6,6 +6,8 @@ excerpt_image: /assets/images/Con-2025-07-19/Untitled-20250719170953092.webp
 tags: [One-shot Active Learning, Image Segmentation, Contrastive Learning]
 ---
 
+Jin, Qiuye, et al. "One-shot active learning for image segmentation via contrastive learning and diversity-based sampling." Knowledge-Based Systems 241 (2022): 108278. https://www.sciencedirect.com/science/article/pii/S0950705122000909
+
 ## 1. Introduction
 
 최근 CNN이 컴퓨터 비전 분야에서 널리 활용, 하지만 CNN은 대량의 라벨링 된 샘플이 필요하다. 하지만 의료 영상이나 원격 탐사 영상처럼 고도의 지식이 필요한 경우 라벨링에 많은 시간과 자원이 소모된다. 따라서 이를 위해 Active learning을 통해서 unlabeled data pool에서 효율적으로 데이터를 선택해 성능을 유지하며, labeling 비용을 줄인다.
